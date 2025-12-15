@@ -1,14 +1,32 @@
+# Pine Tools Hub - robots.txt
+# https://pinetoolshub.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pinetoolshub.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow all search engine crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /

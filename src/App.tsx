@@ -3,25 +3,83 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+
+// PDF Tools
+import MergePdf from "./pages/tools/MergePdf";
+import SplitPdf from "./pages/tools/SplitPdf";
+import CompressPdf from "./pages/tools/CompressPdf";
+import PdfToWord from "./pages/tools/PdfToWord";
+import WordToPdf from "./pages/tools/WordToPdf";
+import PdfToJpg from "./pages/tools/PdfToJpg";
+import JpgToPdf from "./pages/tools/JpgToPdf";
+import RotatePdf from "./pages/tools/RotatePdf";
+import AddWatermark from "./pages/tools/AddWatermark";
+import UnlockPdf from "./pages/tools/UnlockPdf";
+import ProtectPdf from "./pages/tools/ProtectPdf";
+import PdfToPng from "./pages/tools/PdfToPng";
+import PngToPdf from "./pages/tools/PngToPdf";
+import OrganizePdf from "./pages/tools/OrganizePdf";
+
+// Image Tools
+import CompressImage from "./pages/tools/CompressImage";
+import RemoveBackground from "./pages/tools/RemoveBackground";
+
+// Info Pages
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Index />} />
+              
+              {/* PDF Tools */}
+              <Route path="merge-pdf" element={<MergePdf />} />
+              <Route path="split-pdf" element={<SplitPdf />} />
+              <Route path="compress-pdf" element={<CompressPdf />} />
+              <Route path="pdf-to-word" element={<PdfToWord />} />
+              <Route path="word-to-pdf" element={<WordToPdf />} />
+              <Route path="pdf-to-jpg" element={<PdfToJpg />} />
+              <Route path="jpg-to-pdf" element={<JpgToPdf />} />
+              <Route path="rotate-pdf" element={<RotatePdf />} />
+              <Route path="add-watermark" element={<AddWatermark />} />
+              <Route path="unlock-pdf" element={<UnlockPdf />} />
+              <Route path="protect-pdf" element={<ProtectPdf />} />
+              <Route path="pdf-to-png" element={<PdfToPng />} />
+              <Route path="png-to-pdf" element={<PngToPdf />} />
+              <Route path="organize-pdf" element={<OrganizePdf />} />
+              
+              {/* Image Tools */}
+              <Route path="compress-image" element={<CompressImage />} />
+              <Route path="remove-background" element={<RemoveBackground />} />
+              
+              {/* Info Pages */}
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="terms-of-service" element={<TermsOfService />} />
+            </Route>
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

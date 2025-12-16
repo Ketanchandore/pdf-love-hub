@@ -34,6 +34,10 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 
+// Blog
+import Blog from "./pages/Blog";
+import HowToMergePdf from "./pages/blog/HowToMergePdf";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -66,6 +70,10 @@ const App = () => (
               {/* Image Tools */}
               <Route path="compress-image" element={<CompressImage />} />
               <Route path="remove-background" element={<RemoveBackground />} />
+              
+              {/* Blog */}
+              <Route path="blog" element={<Blog />} />
+              <Route path="blog/how-to-merge-pdf-files-free" element={<HowToMergePdf />} />
               
               {/* Info Pages */}
               <Route path="about" element={<About />} />

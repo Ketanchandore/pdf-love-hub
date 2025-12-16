@@ -104,6 +104,12 @@ const Header = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
+              <Link to="/blog" className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
+                Blog
+              </Link>
+            </NavigationMenuItem>
+            
+            <NavigationMenuItem>
               <Link to="/about" className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
                 About
               </Link>
@@ -167,6 +173,7 @@ const Header = () => {
               </div>
             </div>
             <div className="flex gap-4 pt-2 border-t border-border">
+              <Link to="/blog" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
               <Link to="/about" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>About</Link>
               <Link to="/contact" className="text-sm font-medium hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             </div>

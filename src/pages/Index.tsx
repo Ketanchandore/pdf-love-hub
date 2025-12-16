@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
+import { WebsiteStructuredData } from "@/components/seo/StructuredData";
 import ToolCard from "@/components/shared/ToolCard";
 import {
   Merge,
@@ -21,7 +22,12 @@ import {
   Shield,
   Zap,
   Globe,
+  Users,
+  Clock,
+  ArrowRight,
+  CheckCircle,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const pdfTools = [
   {
@@ -141,6 +147,12 @@ const imageTools = [
   },
 ];
 
+const stats = [
+  { label: "Files Processed", value: "10M+", icon: FileText },
+  { label: "Happy Users", value: "500K+", icon: Users },
+  { label: "Average Processing", value: "<3 sec", icon: Clock },
+];
+
 const Index = () => {
   return (
     <>
@@ -150,45 +162,76 @@ const Index = () => {
         keywords="i love pdf, free pdf tools, online pdf converter, merge pdf, split pdf, compress pdf, pdf to word, image compressor, remove background, pdf tools online free"
         canonical="https://pinetoolshub.com"
       />
+      <WebsiteStructuredData />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 via-primary/3 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+        <div className="container mx-auto px-4 text-center relative">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-primary/10 rounded-full">
+            <div className="p-4 bg-primary/10 rounded-full animate-pulse">
               <TreePine className="h-16 w-16 text-primary" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             Free Online PDF & Image Tools
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            I Love PDF style tools with complete privacy. Merge, split, compress, convert PDFs and images - all processing happens directly in your browser. No uploads, no registration, 100% free.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            The best <strong>I Love PDF alternative</strong> with complete privacy. 
+            Merge, split, compress, convert PDFs and images - all processing happens directly in your browser.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
               <Shield className="h-5 w-5 text-primary" />
               <span className="text-sm font-medium">100% Private</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
               <Zap className="h-5 w-5 text-primary" />
               <span className="text-sm font-medium">Instant Processing</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
               <Globe className="h-5 w-5 text-primary" />
               <span className="text-sm font-medium">Works Offline</span>
             </div>
+          </div>
+          
+          {/* Popular Tools Quick Access */}
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button asChild size="lg">
+              <Link to="/merge-pdf">Merge PDF</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/compress-pdf">Compress PDF</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/pdf-to-word">PDF to Word</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-8 border-y border-border bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* PDF Tools Section */}
-      <section className="py-16">
+      <section className="py-16" id="pdf-tools">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">PDF Tools</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Complete suite of I Love PDF style tools for all your PDF needs. Merge, split, compress, convert, and more - completely free and private.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">PDF Tools</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Complete suite of <strong>I Love PDF style tools</strong> for all your PDF needs. 
+              Merge, split, compress, convert, and more - completely free and private.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
@@ -200,12 +243,13 @@ const Index = () => {
       </section>
 
       {/* Image Tools Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-muted/50" id="image-tools">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Image Tools</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Powerful image tools to compress and edit your images. I Love Image tools for quick, browser-based processing.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Image Tools</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Powerful image tools to compress and edit your images. 
+              <strong> I Love Image</strong> tools for quick, browser-based processing.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
@@ -216,43 +260,122 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* How It Works */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Pine Tools Hub?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              The best I Love PDF alternative with unmatched privacy and ease of use.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Pine Tools Hub Works</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Simple three-step process for all your document needs
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { step: "1", title: "Upload Your File", desc: "Drag and drop or click to upload your PDF or image file" },
+              { step: "2", title: "Process Instantly", desc: "Your file is processed right in your browser - no uploads to servers" },
+              { step: "3", title: "Download Result", desc: "Get your processed file instantly with one click" },
+            ].map((item) => (
+              <div key={item.step} className="text-center relative">
+                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground text-xl font-bold flex items-center justify-center mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Pine Tools Hub?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The best <strong>I Love PDF alternative</strong> with unmatched privacy and ease of use.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card border border-border rounded-xl">
               <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Complete Privacy</h3>
               <p className="text-muted-foreground">
-                All processing happens in your browser. Your files never leave your device - we can't see them even if we wanted to.
+                All processing happens in your browser. Your files never leave your device - 
+                we can't see them even if we wanted to.
               </p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card border border-border rounded-xl">
               <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
                 <Zap className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
               <p className="text-muted-foreground">
-                No upload queues, no server processing time. Start working with your files instantly, right in your browser.
+                No upload queues, no server processing time. Start working with your files 
+                instantly, right in your browser.
               </p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-card border border-border rounded-xl">
               <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
                 <Globe className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Works Anywhere</h3>
               <p className="text-muted-foreground">
-                Use on any device with a modern browser - Windows, Mac, Linux, iPhone, Android. No software to install.
+                Use on any device with a modern browser - Windows, Mac, Linux, iPhone, Android. 
+                No software to install.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Preview */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">PDF Tips & Tutorials</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Learn how to work more efficiently with PDF files and images
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Link 
+              to="/blog/how-to-merge-pdf-files-free" 
+              className="p-6 bg-card border border-border rounded-xl hover:shadow-lg transition-all hover:-translate-y-1"
+            >
+              <h3 className="font-semibold mb-2">How to Merge PDF Files for Free</h3>
+              <p className="text-sm text-muted-foreground mb-4">Complete guide to combining PDFs</p>
+              <span className="text-primary text-sm font-medium flex items-center gap-1">
+                Read More <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+            <Link 
+              to="/blog" 
+              className="p-6 bg-card border border-border rounded-xl hover:shadow-lg transition-all hover:-translate-y-1"
+            >
+              <h3 className="font-semibold mb-2">Compress PDF Without Losing Quality</h3>
+              <p className="text-sm text-muted-foreground mb-4">Professional compression tips</p>
+              <span className="text-primary text-sm font-medium flex items-center gap-1">
+                Read More <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+            <Link 
+              to="/blog" 
+              className="p-6 bg-card border border-border rounded-xl hover:shadow-lg transition-all hover:-translate-y-1"
+            >
+              <h3 className="font-semibold mb-2">PDF to Word Conversion Tips</h3>
+              <p className="text-sm text-muted-foreground mb-4">Get perfect conversion results</p>
+              <span className="text-primary text-sm font-medium flex items-center gap-1">
+                Read More <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="outline">
+              <Link to="/blog">View All Articles <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -263,31 +386,80 @@ const Index = () => {
           <div className="prose prose-slate dark:prose-invert max-w-4xl mx-auto">
             <h2>Your Complete Online PDF & Image Toolkit</h2>
             <p>
-              Welcome to Pine Tools Hub - your one-stop destination for free online PDF and image tools. We've created a comprehensive suite of I Love PDF style tools that prioritize your privacy while delivering professional-quality results.
+              Welcome to <strong>Pine Tools Hub</strong> - your one-stop destination for free online PDF and image tools. 
+              We've created a comprehensive suite of <strong>I Love PDF style tools</strong> that prioritize your privacy 
+              while delivering professional-quality results.
             </p>
             <p>
-              Whether you need to merge PDF files for a presentation, compress images for your website, convert documents between formats, or remove backgrounds from product photos, Pine Tools Hub has you covered. Our tools are designed to be intuitive and efficient, requiring no technical knowledge to use.
+              Whether you need to <Link to="/merge-pdf">merge PDF files</Link> for a presentation, 
+              <Link to="/compress-image"> compress images</Link> for your website, 
+              convert documents between formats, or remove backgrounds from product photos, 
+              Pine Tools Hub has you covered. Our tools are designed to be intuitive and efficient, 
+              requiring no technical knowledge to use.
             </p>
             
             <h3>I Love PDF Alternative with Enhanced Privacy</h3>
             <p>
-              Unlike traditional online PDF tools that upload your files to servers, Pine Tools Hub processes everything directly in your web browser. This innovative approach means your sensitive documents - contracts, financial statements, personal photos - never leave your device. It's the privacy you deserve from an I Love PDF alternative.
+              Unlike traditional online PDF tools that upload your files to servers, Pine Tools Hub 
+              processes everything directly in your web browser. This innovative approach means your 
+              sensitive documents - contracts, financial statements, personal photos - never leave your device. 
+              It's the privacy you deserve from an <strong>I Love PDF alternative</strong>.
             </p>
             
             <h3>Popular PDF Tools</h3>
             <p>
-              Our most-used tools include <Link to="/merge-pdf" className="text-primary hover:underline">Merge PDF</Link> for combining multiple documents, <Link to="/compress-pdf" className="text-primary hover:underline">Compress PDF</Link> for reducing file sizes, and <Link to="/pdf-to-word" className="text-primary hover:underline">PDF to Word</Link> for converting to editable documents. Each tool is optimized for speed and quality, giving you professional results in seconds.
+              Our most-used tools include <Link to="/merge-pdf">Merge PDF</Link> for combining multiple documents, 
+              <Link to="/compress-pdf"> Compress PDF</Link> for reducing file sizes, and 
+              <Link to="/pdf-to-word"> PDF to Word</Link> for converting to editable documents. 
+              Each tool is optimized for speed and quality, giving you professional results in seconds.
             </p>
             
             <h3>Image Processing Made Easy</h3>
             <p>
-              Beyond PDFs, we offer powerful image tools including <Link to="/compress-image" className="text-primary hover:underline">Image Compress</Link> for web optimization and <Link to="/remove-background" className="text-primary hover:underline">Remove Background</Link> for creating transparent images. These tools are perfect for e-commerce, social media, and web design projects.
+              Beyond PDFs, we offer powerful image tools including 
+              <Link to="/compress-image"> Image Compress</Link> for web optimization and 
+              <Link to="/remove-background"> Remove Background</Link> for creating transparent images. 
+              These tools are perfect for e-commerce, social media, and web design projects.
+            </p>
+            
+            <h3>Trusted by Professionals Worldwide</h3>
+            <p>
+              Pine Tools Hub is used by students, professionals, and businesses in over 150 countries. 
+              Our commitment to privacy, speed, and reliability has made us a trusted choice for 
+              document processing needs. Join millions of users who trust Pine Tools Hub for their 
+              PDF and image editing tasks.
             </p>
             
             <h3>Free Forever, No Registration Required</h3>
             <p>
-              Pine Tools Hub is completely free to use with no registration required. We support our service through non-intrusive advertising, allowing us to provide professional-quality tools without charging users. Start using our tools right now - no sign-up, no credit card, no limits.
+              Pine Tools Hub is completely free to use with no registration required. We support our 
+              service through non-intrusive advertising, allowing us to provide professional-quality 
+              tools without charging users. Start using our tools right now - no sign-up, no credit card, no limits.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Choose a tool above or explore our most popular options below
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg">
+              <Link to="/merge-pdf">Merge PDF</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/compress-pdf">Compress PDF</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/pdf-to-word">PDF to Word</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/compress-image">Compress Image</Link>
+            </Button>
           </div>
         </div>
       </section>

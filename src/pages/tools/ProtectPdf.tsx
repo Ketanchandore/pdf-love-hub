@@ -60,7 +60,7 @@ const ProtectPdf = () => {
       const pdfBytes = await pdf.save();
       setProgress(90);
 
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" });
       saveAs(blob, `protected-${file.name}`);
 
       setProgress(100);

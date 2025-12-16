@@ -38,7 +38,6 @@ const UnlockPdf = () => {
 
       const pdf = await PDFDocument.load(arrayBuffer, {
         ignoreEncryption: true,
-        password: password || undefined,
       });
       setProgress(60);
 
@@ -48,7 +47,7 @@ const UnlockPdf = () => {
       setProgress(80);
 
       const pdfBytes = await unlockedPdf.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" });
       saveAs(blob, `unlocked-${file.name}`);
 
       setProgress(100);

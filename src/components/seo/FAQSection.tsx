@@ -12,7 +12,7 @@ interface FAQItem {
 
 interface FAQSectionProps {
   faqs: FAQItem[];
-  toolName: string;
+  toolName?: string;
 }
 
 const FAQSection = ({ faqs, toolName }: FAQSectionProps) => {
@@ -31,9 +31,9 @@ const FAQSection = ({ faqs, toolName }: FAQSectionProps) => {
 
   return (
     <section className="py-12 md:py-16">
-      <div className="container max-w-4xl">
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-          Frequently Asked Questions About {toolName}
+          {toolName ? `Frequently Asked Questions About ${toolName}` : "Frequently Asked Questions"}
         </h2>
         
         <Accordion type="single" collapsible className="w-full">
@@ -49,7 +49,6 @@ const FAQSection = ({ faqs, toolName }: FAQSectionProps) => {
           ))}
         </Accordion>
 
-        {/* FAQ Schema for SEO */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </div>
     </section>

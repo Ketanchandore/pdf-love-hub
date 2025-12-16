@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
+import { PDFDocument, rgb, StandardFonts, degrees } from "pdf-lib";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
 import ToolHero from "@/components/shared/ToolHero";
@@ -50,14 +50,14 @@ const AddWatermark = () => {
           font,
           color: rgb(0.75, 0.75, 0.75),
           opacity: 0.3,
-          rotate: { type: "degrees" as const, angle: -45 },
+          rotate: degrees(-45),
         });
 
         setProgress(30 + ((i + 1) / totalPages) * 60);
       }
 
       const pdfBytes = await pdf.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" });
       saveAs(blob, `watermarked-${file.name}`);
 
       setProgress(100);

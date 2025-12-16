@@ -82,7 +82,7 @@ const OrganizePdf = () => {
       }
 
       const pdfBytes = await newPdf.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(pdfBytes)], { type: "application/pdf" });
       saveAs(blob, `organized-${file.name}`);
 
       setProgress(100);

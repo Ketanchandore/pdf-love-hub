@@ -10,8 +10,8 @@ interface FileUploadProps {
   maxFiles?: number;
   maxSize?: number;
   onFilesSelected: (files: File[]) => void;
-  files: File[];
-  onRemoveFile: (index: number) => void;
+  files?: File[];
+  onRemoveFile?: (index: number) => void;
   label?: string;
   description?: string;
 }
@@ -20,11 +20,11 @@ const FileUpload = ({
   accept = { "application/pdf": [".pdf"] },
   multiple = true,
   maxFiles = 20,
-  maxSize = 100 * 1024 * 1024, // 100MB
+  maxSize = 100 * 1024 * 1024,
   onFilesSelected,
-  files,
+  files = [],
   onRemoveFile,
-  label = "Drop your PDF files here",
+  label = "Drop your files here",
   description = "or click to select files",
 }: FileUploadProps) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -56,15 +56,16 @@ const FileUpload = ({
   };
 
   const isImage = (file: File) => file.type.startsWith("image/");
-  const isPdf = (file: File) => file.type === "application/pdf";
 
   return (
     <div className="w-full space-y-4">
       <div
         {...getRootProps()}
         className={cn(
-          "upload-zone",
-          isDragging && "dragging"
+          "border-2 border-dashed rounded-xl p-8 md:p-12 text-center cursor-pointer transition-all duration-200",
+          isDragging
+            ? "border-primary bg-primary/5"
+            : "border-muted-foreground/25 hover:border-primary/50 hover:bg-muted/50"
         )}
       >
         <input {...getInputProps()} />
@@ -85,8 +86,7 @@ const FileUpload = ({
         </div>
       </div>
 
-      {/* File List */}
-      {files.length > 0 && (
+      {files.length > 0 && onRemoveFile && (
         <div className="space-y-2">
           <h4 className="font-medium text-sm text-muted-foreground">
             Selected Files ({files.length})

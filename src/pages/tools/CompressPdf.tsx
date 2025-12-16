@@ -53,7 +53,7 @@ const CompressPdf = () => {
       });
       setProgress(90);
 
-      const blob = new Blob([compressedBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(compressedBytes)], { type: "application/pdf" });
       setCompressedSize(blob.size);
       
       saveAs(blob, `compressed-${file.name}`);

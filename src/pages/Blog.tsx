@@ -1,62 +1,56 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import { Calendar, Clock, ArrowRight, User } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 const blogPosts = [
   {
     slug: "how-to-merge-pdf-files-free",
     title: "How to Merge PDF Files for Free: Complete Guide 2025",
     excerpt: "Learn the easiest ways to combine multiple PDF documents into one file. Step-by-step guide with tips for beginners and professionals.",
-    date: "2024-12-15",
+    date: "2024-12-17",
     readTime: "5 min read",
     category: "PDF Tips",
-    image: "/blog/merge-pdf-guide.jpg"
   },
   {
-    slug: "compress-pdf-without-losing-quality",
-    title: "How to Compress PDF Without Losing Quality",
+    slug: "how-to-compress-pdf-files-free",
+    title: "How to Compress PDF Files Free - Ultimate Guide 2025",
     excerpt: "Discover professional techniques to reduce PDF file size while maintaining document quality. Perfect for email attachments and web uploads.",
-    date: "2024-12-14",
-    readTime: "4 min read",
-    category: "PDF Tips",
-    image: "/blog/compress-pdf-guide.jpg"
-  },
-  {
-    slug: "pdf-to-word-conversion-tips",
-    title: "PDF to Word Conversion: Tips for Perfect Results",
-    excerpt: "Get the best results when converting PDF documents to editable Word files. Learn how to preserve formatting and handle complex layouts.",
-    date: "2024-12-13",
+    date: "2024-12-17",
     readTime: "6 min read",
-    category: "Tutorials",
-    image: "/blog/pdf-to-word-guide.jpg"
+    category: "PDF Tips",
   },
   {
-    slug: "image-compression-for-websites",
-    title: "Image Compression Guide for Faster Websites",
-    excerpt: "Optimize your website images for better performance. Learn about different image formats and when to use each one.",
-    date: "2024-12-12",
+    slug: "pdf-to-word-converter-guide",
+    title: "How to Convert PDF to Word Free - Complete Guide 2025",
+    excerpt: "Get the best results when converting PDF documents to editable Word files. Learn how to preserve formatting and handle complex layouts.",
+    date: "2024-12-17",
     readTime: "7 min read",
-    category: "Image Tips",
-    image: "/blog/image-compression-guide.jpg"
+    category: "Tutorials",
   },
   {
-    slug: "protect-pdf-with-password",
-    title: "How to Password Protect Your PDF Documents",
-    excerpt: "Keep your sensitive documents secure with password protection. Learn different security levels and best practices.",
-    date: "2024-12-11",
-    readTime: "4 min read",
-    category: "Security",
-    image: "/blog/protect-pdf-guide.jpg"
-  },
-  {
-    slug: "remove-background-from-images",
-    title: "Remove Background from Images: Free Methods That Work",
-    excerpt: "Create professional product photos and portraits by removing backgrounds. Compare different tools and techniques.",
-    date: "2024-12-10",
+    slug: "jpg-to-pdf-converter-guide",
+    title: "How to Convert JPG to PDF Free - Complete Guide 2025",
+    excerpt: "Learn how to convert JPG images to PDF documents. Create professional PDF files from multiple images in seconds.",
+    date: "2024-12-17",
     readTime: "5 min read",
-    category: "Image Tips",
-    image: "/blog/remove-bg-guide.jpg"
+    category: "Tutorials",
+  },
+  {
+    slug: "how-to-split-pdf-files-free",
+    title: "How to Split PDF Files Free - Complete Guide 2025",
+    excerpt: "Learn how to split PDF files into separate pages or sections. Extract specific pages from large PDF documents easily.",
+    date: "2024-12-17",
+    readTime: "5 min read",
+    category: "PDF Tips",
+  },
+  {
+    slug: "pdf-to-jpg-converter-guide",
+    title: "How to Convert PDF to JPG Free - Complete Guide 2025",
+    excerpt: "Extract high-quality images from PDF pages. Convert PDF documents to JPG format for easy sharing and editing.",
+    date: "2024-12-17",
+    readTime: "5 min read",
+    category: "Tutorials",
   },
 ];
 
@@ -66,7 +60,7 @@ const Blog = () => {
       <SEOHead
         title="Blog - PDF & Image Tips, Tutorials, and Guides | Pine Tools Hub"
         description="Learn how to work with PDF files and images. Free tutorials, tips, and step-by-step guides for merging PDF, compressing images, converting documents, and more."
-        keywords="pdf tips, pdf tutorials, how to merge pdf, compress pdf guide, image optimization, pdf conversion tips, document management"
+        keywords="pdf tips, pdf tutorials, how to merge pdf, compress pdf guide, image optimization, pdf conversion tips, document management, i love pdf guide"
         canonical="https://pinetoolshub.com/blog"
       />
 
@@ -131,7 +125,7 @@ const Blog = () => {
                 key={post.slug} 
                 className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-video bg-muted" />
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5" />
                 <div className="p-6">
                   <span className="inline-block px-2 py-1 bg-muted text-muted-foreground text-xs font-medium rounded mb-3">
                     {post.category}
@@ -178,8 +172,8 @@ const Blog = () => {
           </p>
           <h3>Popular Topics</h3>
           <ul>
-            <li><strong>PDF Management:</strong> Merge, split, compress, and organize PDF files</li>
-            <li><strong>Document Conversion:</strong> Convert between PDF, Word, JPG, and PNG formats</li>
+            <li><strong>PDF Management:</strong> <Link to="/blog/how-to-merge-pdf-files-free">Merge</Link>, <Link to="/blog/how-to-split-pdf-files-free">split</Link>, <Link to="/blog/how-to-compress-pdf-files-free">compress</Link>, and organize PDF files</li>
+            <li><strong>Document Conversion:</strong> Convert between <Link to="/blog/pdf-to-word-converter-guide">PDF and Word</Link>, <Link to="/blog/pdf-to-jpg-converter-guide">PDF and JPG</Link>, and more</li>
             <li><strong>Image Optimization:</strong> Compress images for web without losing quality</li>
             <li><strong>Security:</strong> Password protect sensitive documents</li>
           </ul>

@@ -301,7 +301,7 @@ const HowToCompressPdf = () => {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 };
 

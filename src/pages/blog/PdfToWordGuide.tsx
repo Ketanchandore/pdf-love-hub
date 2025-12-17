@@ -349,7 +349,7 @@ const PdfToWordGuide = () => {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 };
 

@@ -316,7 +316,7 @@ const SplitPdfGuide = () => {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 };
 

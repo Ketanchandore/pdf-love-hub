@@ -37,6 +37,11 @@ import TermsOfService from "./pages/TermsOfService";
 // Blog
 import Blog from "./pages/Blog";
 import HowToMergePdf from "./pages/blog/HowToMergePdf";
+import HowToCompressPdf from "./pages/blog/HowToCompressPdf";
+import PdfToWordGuide from "./pages/blog/PdfToWordGuide";
+import JpgToPdfGuide from "./pages/blog/JpgToPdfGuide";
+import SplitPdfGuide from "./pages/blog/SplitPdfGuide";
+import PdfToJpgGuide from "./pages/blog/PdfToJpgGuide";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +79,11 @@ const App = () => (
               {/* Blog */}
               <Route path="blog" element={<Blog />} />
               <Route path="blog/how-to-merge-pdf-files-free" element={<HowToMergePdf />} />
+              <Route path="blog/how-to-compress-pdf-files-free" element={<HowToCompressPdf />} />
+              <Route path="blog/pdf-to-word-converter-guide" element={<PdfToWordGuide />} />
+              <Route path="blog/jpg-to-pdf-converter-guide" element={<JpgToPdfGuide />} />
+              <Route path="blog/how-to-split-pdf-files-free" element={<SplitPdfGuide />} />
+              <Route path="blog/pdf-to-jpg-converter-guide" element={<PdfToJpgGuide />} />
               
               {/* Info Pages */}
               <Route path="about" element={<About />} />

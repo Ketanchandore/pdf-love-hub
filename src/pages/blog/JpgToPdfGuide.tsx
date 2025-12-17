@@ -335,7 +335,7 @@ const JpgToPdfGuide = () => {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 };
 

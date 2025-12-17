@@ -295,7 +295,7 @@ const PdfToJpgGuide = () => {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 };
 

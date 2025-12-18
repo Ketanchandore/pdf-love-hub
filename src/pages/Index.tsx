@@ -203,8 +203,8 @@ const Index = () => {
       />
       <WebsiteStructuredData />
 
-      {/* Hero Section - Compact */}
-      <section className="py-8 md:py-12 bg-gradient-to-b from-primary/5 via-primary/3 to-background relative overflow-hidden">
+      {/* Hero Section - Hidden on mobile, visible on desktop */}
+      <section className="hidden md:block py-8 md:py-12 bg-gradient-to-b from-primary/5 via-primary/3 to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
         <div className="container mx-auto px-4 text-center relative">
           <div className="flex justify-center mb-4">
@@ -249,8 +249,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Indicators - Compact */}
-      <section className="py-4 border-y border-border bg-muted/30">
+      {/* Trust Indicators - Hidden on mobile */}
+      <section className="hidden md:block py-4 border-y border-border bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
             {stats.map((stat) => (
@@ -263,17 +263,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Mobile Header - Only visible on mobile */}
+      <div className="md:hidden py-4 px-4 bg-gradient-to-b from-primary/5 to-background">
+        <h1 className="text-xl font-bold text-center">Free PDF & Image Tools</h1>
+        <p className="text-sm text-muted-foreground text-center mt-1">I Love PDF Alternative - 100% Private</p>
+      </div>
+
       {/* PDF Tools Section */}
-      <section className="py-10" id="pdf-tools">
+      <section className="py-4 md:py-10" id="pdf-tools">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">PDF Tools</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-4 md:mb-8">
+            <h2 className="text-xl md:text-3xl font-bold mb-2">PDF Tools</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
               Complete suite of <strong>I Love PDF style tools</strong> for all your PDF needs. 
               Merge, split, compress, convert, and more - completely free and private.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-3">
             {pdfTools.map((tool) => (
               <ToolCard key={tool.href} {...tool} />
             ))}

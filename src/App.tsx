@@ -23,6 +23,11 @@ import ProtectPdf from "./pages/tools/ProtectPdf";
 import PdfToPng from "./pages/tools/PdfToPng";
 import PngToPdf from "./pages/tools/PngToPdf";
 import OrganizePdf from "./pages/tools/OrganizePdf";
+import ExtractPages from "./pages/tools/ExtractPages";
+import AddPageNumbers from "./pages/tools/AddPageNumbers";
+import HtmlToPdf from "./pages/tools/HtmlToPdf";
+import SignPdf from "./pages/tools/SignPdf";
+import CropPdf from "./pages/tools/CropPdf";
 
 // Image Tools
 import CompressImage from "./pages/tools/CompressImage";
@@ -71,6 +76,11 @@ const App = () => (
               <Route path="pdf-to-png" element={<PdfToPng />} />
               <Route path="png-to-pdf" element={<PngToPdf />} />
               <Route path="organize-pdf" element={<OrganizePdf />} />
+              <Route path="extract-pages" element={<ExtractPages />} />
+              <Route path="add-page-numbers" element={<AddPageNumbers />} />
+              <Route path="html-to-pdf" element={<HtmlToPdf />} />
+              <Route path="sign-pdf" element={<SignPdf />} />
+              <Route path="crop-pdf" element={<CropPdf />} />
               
               {/* Image Tools */}
               <Route path="compress-image" element={<CompressImage />} />

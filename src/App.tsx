@@ -28,6 +28,14 @@ import AddPageNumbers from "./pages/tools/AddPageNumbers";
 import HtmlToPdf from "./pages/tools/HtmlToPdf";
 import SignPdf from "./pages/tools/SignPdf";
 import CropPdf from "./pages/tools/CropPdf";
+import PdfToExcel from "./pages/tools/PdfToExcel";
+import PdfToPowerPoint from "./pages/tools/PdfToPowerPoint";
+import PowerPointToPdf from "./pages/tools/PowerPointToPdf";
+import ExcelToPdf from "./pages/tools/ExcelToPdf";
+import OcrPdf from "./pages/tools/OcrPdf";
+import RepairPdf from "./pages/tools/RepairPdf";
+import ComparePdf from "./pages/tools/ComparePdf";
+import RedactPdf from "./pages/tools/RedactPdf";
 
 // Image Tools
 import CompressImage from "./pages/tools/CompressImage";
@@ -81,6 +89,14 @@ const App = () => (
               <Route path="html-to-pdf" element={<HtmlToPdf />} />
               <Route path="sign-pdf" element={<SignPdf />} />
               <Route path="crop-pdf" element={<CropPdf />} />
+              <Route path="pdf-to-excel" element={<PdfToExcel />} />
+              <Route path="pdf-to-powerpoint" element={<PdfToPowerPoint />} />
+              <Route path="powerpoint-to-pdf" element={<PowerPointToPdf />} />
+              <Route path="excel-to-pdf" element={<ExcelToPdf />} />
+              <Route path="ocr-pdf" element={<OcrPdf />} />
+              <Route path="repair-pdf" element={<RepairPdf />} />
+              <Route path="compare-pdf" element={<ComparePdf />} />
+              <Route path="redact-pdf" element={<RedactPdf />} />
               
               {/* Image Tools */}
               <Route path="compress-image" element={<CompressImage />} />

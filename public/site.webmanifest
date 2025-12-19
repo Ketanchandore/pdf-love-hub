@@ -1,0 +1,79 @@
+{
+  "name": "Pine Tools Hub - Free Online PDF Tools | I Love PDF Alternative",
+  "short_name": "Pine Tools Hub",
+  "description": "Free online PDF tools - Merge, split, compress, convert PDF files instantly. Best I Love PDF alternative with 100% browser-based processing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#22c55e",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["productivity", "utilities", "business"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Pine Tools Hub - Free PDF Tools Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Merge PDF Files",
+      "short_name": "Merge PDF",
+      "description": "Combine multiple PDF files into one - I Love PDF Merge alternative",
+      "url": "/merge-pdf",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Split PDF Pages",
+      "short_name": "Split PDF",
+      "description": "Split PDF into separate pages - I Love PDF Split alternative",
+      "url": "/split-pdf",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Compress PDF Size",
+      "short_name": "Compress PDF",
+      "description": "Reduce PDF file size - I Love PDF Compress alternative",
+      "url": "/compress-pdf",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "PDF to Word",
+      "short_name": "PDF to Word",
+      "description": "Convert PDF to Word document free",
+      "url": "/pdf-to-word",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

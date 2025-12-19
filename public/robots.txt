@@ -1,23 +1,73 @@
-# Pine Tools Hub - robots.txt
+# Pine Tools Hub - Enterprise SEO Optimized Robots.txt
+# Best I Love PDF Alternative - Free Online PDF & Image Tools
 # https://pinetoolshub.com
 
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://pinetoolshub.com/sitemap.xml
 
-# Disallow admin and private areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
 
-# Allow all search engine crawlers
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /admin/
+
+# PDF Tools - Priority Indexing
+Allow: /merge-pdf
+Allow: /split-pdf
+Allow: /compress-pdf
+Allow: /pdf-to-word
+Allow: /word-to-pdf
+Allow: /pdf-to-jpg
+Allow: /jpg-to-pdf
+Allow: /pdf-to-png
+Allow: /png-to-pdf
+Allow: /pdf-to-excel
+Allow: /excel-to-pdf
+Allow: /pdf-to-powerpoint
+Allow: /powerpoint-to-pdf
+Allow: /rotate-pdf
+Allow: /add-watermark
+Allow: /unlock-pdf
+Allow: /protect-pdf
+Allow: /organize-pdf
+Allow: /extract-pages
+Allow: /add-page-numbers
+Allow: /html-to-pdf
+Allow: /sign-pdf
+Allow: /crop-pdf
+Allow: /ocr-pdf
+Allow: /repair-pdf
+Allow: /compare-pdf
+Allow: /redact-pdf
+
+# Image Tools
+Allow: /compress-image
+Allow: /remove-background
+
+# Blog & Content
+Allow: /blog
+Allow: /blog/*
+
+# Info Pages
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-service
+
+# Search Engine Specific
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
@@ -30,3 +80,9 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Host
+Host: https://pinetoolshub.com

@@ -42,10 +42,10 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <FileText className="h-5 w-5 text-primary-foreground" />
+          <div className="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-lg bg-primary shrink-0">
+            <FileText className="h-4 w-4 md:h-5 md:w-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold text-foreground">
+          <span className="text-lg md:text-xl font-bold text-foreground whitespace-nowrap">
             Pine Tools Hub
           </span>
         </Link>

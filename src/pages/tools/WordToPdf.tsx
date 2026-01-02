@@ -3,6 +3,7 @@ import mammoth from "mammoth";
 import { jsPDF } from "jspdf";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -75,43 +76,51 @@ const WordToPdf = () => {
   const faqs = [
     {
       question: "How do I convert Word to PDF online for free?",
-      answer: "Upload your Word document (.doc or .docx) to our I Love Word to PDF converter, click 'Convert to PDF', and download your PDF file instantly. It's completely free with no registration required."
+      answer: "Upload your Word document (.doc or .docx) to our free Word to PDF converter, click 'Convert to PDF', and download your PDF file instantly. Completely free with no registration required."
     },
     {
-      question: "What Word formats are supported?",
-      answer: "Our converter supports both .doc and .docx file formats. For best results, we recommend using .docx files as they provide better compatibility and conversion quality."
+      question: "What Word file formats are supported for PDF conversion?",
+      answer: "Our converter supports both .doc and .docx file formats. For best results and optimal compatibility, we recommend using .docx files as they provide better conversion quality."
     },
     {
-      question: "Will my document formatting be preserved?",
-      answer: "Our converter extracts text content and creates a clean, readable PDF. Basic text formatting is maintained, though complex layouts may be simplified for optimal PDF compatibility."
+      question: "Will my Word document formatting be preserved in PDF?",
+      answer: "Our converter extracts text content and creates a clean, readable PDF. Basic text formatting is maintained, though complex layouts with tables and images may be simplified for optimal PDF compatibility."
     },
     {
-      question: "Is there a file size limit?",
-      answer: "Since conversion happens in your browser, there's no server-imposed limit. However, very large documents may take longer to process depending on your device's capabilities."
+      question: "Is there a file size limit for Word to PDF conversion?",
+      answer: "Since conversion happens entirely in your browser, there is no server-imposed limit. Very large documents may take longer to process depending on your device capabilities."
     },
     {
-      question: "Can I convert multiple Word files at once?",
-      answer: "Currently, our tool converts one file at a time to ensure optimal quality. For multiple files, simply convert them one after another - each conversion takes just seconds."
+      question: "Can I convert multiple Word files to PDF at once?",
+      answer: "Currently, our tool converts one Word file at a time to ensure optimal quality and accuracy. For multiple files, simply convert them one after another - each conversion takes just seconds."
     },
     {
-      question: "Is my Word document secure during conversion?",
-      answer: "Absolutely! All processing happens locally in your browser. Your documents never leave your device, ensuring complete privacy for sensitive business or personal files."
+      question: "Is Word to PDF conversion secure and private?",
+      answer: "100% secure and private! All processing happens locally in your browser. Your documents never leave your device or get uploaded to any server, ensuring complete privacy for sensitive business or personal files."
+    },
+    {
+      question: "How to convert Word to PDF on mobile phone?",
+      answer: "Our Word to PDF converter works perfectly on mobile devices. Upload your Word document from your phone storage, convert it, and download the PDF. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "Can I convert Word to PDF without Microsoft Office?",
+      answer: "Yes! Our online converter works entirely in your browser - no Microsoft Office or any software installation required. Simply upload your .doc or .docx file and get your PDF instantly."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Word to PDF Converter Free Online - I Love Word to PDF | Pine Tools Hub"
-        description="Convert Word to PDF documents online for free with our I Love Word to PDF converter. Transform DOC and DOCX files into PDFs instantly. No registration, 100% secure."
-        keywords="word to pdf, convert word to pdf, i love word to pdf, doc to pdf, docx to pdf, word converter, word to pdf online free"
+        title="Word to PDF Converter Free Online - Convert DOC to PDF 2026 | Pine Tools Hub"
+        description="Convert Word to PDF online free without watermark. Best DOC to PDF converter - transform .doc and .docx files to PDF instantly. No registration, works on mobile."
+        keywords="word to pdf, convert word to pdf, doc to pdf, docx to pdf, word to pdf converter, word to pdf online free, word to pdf no watermark, convert document to pdf, microsoft word to pdf"
         canonical="https://pinetoolshub.com/word-to-pdf"
       />
 
       <div className="py-12">
         <ToolHero
-          title="Word to PDF Converter"
-          description="Transform your Word documents into professional PDF files. I Love Word to PDF makes conversion quick and easy - completely free and secure."
+          title="Word to PDF Converter - Free Online"
+          description="Convert Word documents to PDF online free without watermark. Transform DOC and DOCX files into professional PDFs instantly - works on desktop and mobile."
           icon={<FileOutput className="h-8 w-8 text-primary" />}
         />
 

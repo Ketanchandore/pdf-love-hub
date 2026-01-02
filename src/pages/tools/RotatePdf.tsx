@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PDFDocument, degrees } from "pdf-lib";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -61,44 +62,52 @@ const RotatePdf = () => {
 
   const faqs = [
     {
-      question: "How do I rotate a PDF online for free?",
-      answer: "Upload your PDF to our I Love PDF Rotate tool, select your rotation angle (90°, 180°, or 270°), and click 'Rotate PDF'. Your rotated document will be ready to download instantly."
+      question: "How do I rotate PDF pages online for free?",
+      answer: "Upload your PDF to our free PDF rotation tool, select your rotation angle (90°, 180°, or 270°), and click 'Rotate PDF'. Your rotated document will be ready to download instantly - completely free with no watermark."
     },
     {
-      question: "Can I rotate specific pages in a PDF?",
-      answer: "Currently, our tool rotates all pages in the PDF by the same angle. For selective page rotation, use our Organize PDF tool which offers more granular control."
+      question: "Can I rotate specific pages in a PDF document?",
+      answer: "Currently, our rotate PDF tool rotates all pages by the same angle. For selective page rotation, use our Organize PDF tool which offers more granular control over individual pages."
     },
     {
-      question: "What rotation angles are available?",
-      answer: "You can rotate pages by 90° (clockwise), 180° (upside down), or 270° (counter-clockwise). Choose the angle that best fixes your document orientation."
+      question: "What rotation angles are available for PDF pages?",
+      answer: "You can rotate PDF pages by 90° clockwise, 180° (flip upside down), or 270° counter-clockwise. Choose the angle that best fixes your document orientation issues."
     },
     {
-      question: "Will rotating affect my PDF quality?",
-      answer: "No, rotation is a lossless operation. Your text, images, and formatting remain exactly the same - only the page orientation changes."
+      question: "Will rotating PDF pages affect document quality?",
+      answer: "No, PDF rotation is a completely lossless operation. Your text, images, formatting, and all content remain exactly the same - only the page orientation changes. No quality loss whatsoever."
     },
     {
       question: "Can I rotate a scanned PDF document?",
-      answer: "Yes! Our rotate tool works with any PDF, including scanned documents. It's perfect for fixing the orientation of incorrectly scanned pages."
+      answer: "Yes! Our PDF rotate tool works perfectly with any PDF, including scanned documents. It is ideal for fixing the orientation of incorrectly scanned pages or photos converted to PDF."
     },
     {
-      question: "Is my PDF secure during rotation?",
-      answer: "Absolutely! All processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security."
+      question: "Is rotating PDF files secure and private?",
+      answer: "100% secure and private! All PDF rotation processing happens locally in your browser. Your files never leave your device or get uploaded to any server."
+    },
+    {
+      question: "How to rotate PDF on mobile phone?",
+      answer: "Our PDF rotation tool works on all mobile devices. Simply upload your PDF from your phone, select the rotation angle, and download the rotated PDF. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "Can I rotate landscape PDF to portrait or vice versa?",
+      answer: "Yes! Use 90° or 270° rotation to change between landscape and portrait orientations. This is perfect for fixing PDFs that display sideways on your screen."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Rotate PDF Online Free - I Love PDF Rotate Tool | Pine Tools Hub"
-        description="Rotate PDF pages online for free with our I Love PDF Rotate tool. Fix document orientation by rotating pages 90°, 180°, or 270°. No registration, 100% secure."
-        keywords="rotate pdf, turn pdf pages, i love pdf rotate, pdf rotation tool, fix pdf orientation, rotate pdf online free, rotate pdf pages"
+        title="Rotate PDF Online Free - Turn PDF Pages 90°, 180°, 270° | Pine Tools Hub"
+        description="Rotate PDF pages online for free. Turn PDF documents 90°, 180°, or 270° instantly. Fix PDF orientation without watermark - works on mobile. No registration required."
+        keywords="rotate pdf, turn pdf pages, pdf rotation tool, fix pdf orientation, rotate pdf online free, rotate pdf pages, rotate pdf 90 degrees, flip pdf, rotate scanned pdf, pdf page rotation"
         canonical="https://pinetoolshub.com/rotate-pdf"
       />
 
       <div className="py-12">
         <ToolHero
-          title="Rotate PDF Pages"
-          description="Fix the orientation of your PDF pages by rotating them. I Love PDF Rotate makes it quick and easy - completely free and secure."
+          title="Rotate PDF Pages Online Free"
+          description="Turn PDF pages 90°, 180°, or 270° to fix document orientation. Free PDF rotation tool - no watermark, works on desktop and mobile devices."
           icon={<RotateCw className="h-8 w-8 text-primary" />}
         />
 

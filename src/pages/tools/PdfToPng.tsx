@@ -3,6 +3,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -77,44 +78,52 @@ const PdfToPng = () => {
 
   const faqs = [
     {
-      question: "How do I convert PDF to PNG images online?",
-      answer: "Upload your PDF to our I Love PDF to PNG converter, click 'Convert to PNG', and download your high-quality PNG images as a ZIP file. Each page becomes a separate PNG."
+      question: "How do I convert PDF to PNG images online for free?",
+      answer: "Upload your PDF to our free PDF to PNG converter, click 'Convert to PNG', and download your high-quality lossless PNG images as a ZIP file. Each page becomes a separate PNG image."
     },
     {
       question: "Why choose PNG over JPG for PDF conversion?",
-      answer: "PNG offers lossless compression, preserving every detail and supporting transparency. Choose PNG when you need the highest quality or when your PDF contains graphics with transparent backgrounds."
+      answer: "PNG offers lossless compression, preserving every pixel perfectly and supporting transparency. Choose PNG when you need the highest quality, sharp text, or when your PDF contains graphics with transparent backgrounds."
     },
     {
-      question: "What resolution are the converted PNG images?",
-      answer: "Our converter creates high-resolution PNG images at 2x scale, ensuring crisp, clear images perfect for presentations, printing, or detailed viewing."
+      question: "What resolution are the converted PNG images from PDF?",
+      answer: "Our converter creates ultra high-resolution PNG images at 2x scale, ensuring crisp, clear images perfect for presentations, printing, professional work, or detailed viewing on high-DPI displays."
     },
     {
-      question: "Can I convert a multi-page PDF to PNG?",
-      answer: "Yes! Every page of your PDF is converted to a separate PNG image. All images are packaged in a convenient ZIP file for easy download."
+      question: "Can I convert a multi-page PDF to PNG images?",
+      answer: "Yes! Every page of your PDF is converted to a separate lossless PNG image. All images are packaged in a convenient ZIP file for easy download and organization."
     },
     {
-      question: "Is there a page limit for conversion?",
-      answer: "There's no strict limit since processing happens in your browser. Most PDFs up to 50 pages convert smoothly depending on your device's capabilities."
+      question: "Is there a page limit for PDF to PNG conversion?",
+      answer: "There is no strict limit since processing happens entirely in your browser. Most PDFs up to 50 pages convert smoothly depending on your device memory capabilities."
     },
     {
-      question: "Is my PDF secure during conversion?",
-      answer: "Absolutely! All conversion happens locally in your browser. Your PDF never leaves your device, ensuring complete privacy and security."
+      question: "Is PDF to PNG conversion secure and private?",
+      answer: "100% secure and private! All conversion happens locally in your browser. Your PDF never leaves your device or gets uploaded to any server, ensuring complete privacy."
+    },
+    {
+      question: "How to convert PDF to PNG on mobile phone?",
+      answer: "Our PDF to PNG converter works perfectly on mobile devices. Upload your PDF from your phone, convert it, and download the PNG images. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "PDF to PNG vs PDF to JPG - which should I choose?",
+      answer: "Choose PNG for lossless quality, transparency support, and sharp text/graphics. Choose JPG for smaller file sizes when slight compression is acceptable. PNG is better for documents, JPG for photos."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="PDF to PNG Converter Free Online - I Love PDF to PNG | Pine Tools Hub"
-        description="Convert PDF to PNG images online for free with our I Love PDF to PNG converter. Transform PDF pages into high-quality PNG images with transparency. No registration, 100% secure."
-        keywords="pdf to png, convert pdf to png, i love pdf to png, pdf to image, pdf to png online free, pdf converter png, extract png from pdf"
+        title="PDF to PNG Converter Free Online - Lossless Image Quality | Pine Tools Hub"
+        description="Convert PDF to PNG images online for free with lossless quality. Extract PNG images from PDF pages with transparency support. Best PDF to PNG converter - no watermark."
+        keywords="pdf to png, convert pdf to png, pdf to image, pdf to png online free, pdf to png converter, extract png from pdf, pdf to png lossless, pdf to png transparent"
         canonical="https://pinetoolshub.com/pdf-to-png"
       />
 
       <div className="py-12">
         <ToolHero
-          title="PDF to PNG Converter"
-          description="Transform your PDF pages into high-quality PNG images with lossless quality. I Love PDF to PNG - completely free and secure."
+          title="PDF to PNG Converter - Free Online"
+          description="Convert PDF pages to lossless PNG images with transparency support. Extract images from PDF in highest quality - works on desktop and mobile."
           icon={<ImageIcon className="h-8 w-8 text-primary" />}
         />
 

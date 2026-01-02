@@ -3,6 +3,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -77,44 +78,52 @@ const PdfToJpg = () => {
 
   const faqs = [
     {
-      question: "How do I convert PDF to JPG images online?",
-      answer: "Simply upload your PDF to our I Love PDF to JPG converter, click 'Convert to JPG', and download your images as a ZIP file. Each page becomes a separate high-quality JPG image."
+      question: "How do I convert PDF to JPG images online for free?",
+      answer: "Upload your PDF to our free PDF to JPG converter, click 'Convert to JPG', and download your high-quality images as a ZIP file. Each PDF page becomes a separate JPG image instantly."
     },
     {
-      question: "What quality are the converted JPG images?",
-      answer: "Our converter creates high-resolution JPG images at 2x scale with 90% quality. This ensures your images are crisp and clear, perfect for presentations, printing, or web use."
+      question: "What quality are the converted JPG images from PDF?",
+      answer: "Our converter creates high-resolution JPG images at 2x scale with 90% quality. This ensures your images are crisp and clear, perfect for presentations, printing, social media, or web use."
     },
     {
-      question: "Can I convert a multi-page PDF to JPG?",
-      answer: "Yes! Every page of your PDF is converted to a separate JPG image. All images are packaged in a convenient ZIP file for easy download."
+      question: "Can I convert a multi-page PDF to JPG images?",
+      answer: "Yes! Every page of your PDF is converted to a separate high-quality JPG image. All images are packaged in a convenient ZIP file for easy download and organization."
     },
     {
-      question: "Is there a page limit for conversion?",
-      answer: "There's no strict page limit. Since processing happens in your browser, the limitation is your device's memory. Most PDFs up to 50 pages convert without issues."
+      question: "Is there a page limit for PDF to JPG conversion?",
+      answer: "There is no strict page limit since processing happens entirely in your browser. Most PDFs up to 50 pages convert smoothly depending on your device memory and capabilities."
     },
     {
-      question: "Why would I convert PDF to JPG?",
-      answer: "JPG images are great for sharing on social media, embedding in presentations, uploading to websites that don't support PDF, or when you need to edit pages as images."
+      question: "Why would I convert PDF to JPG images?",
+      answer: "JPG images are perfect for sharing on social media, embedding in presentations, uploading to websites that do not support PDF, creating thumbnails, or when you need to edit PDF content as images."
     },
     {
-      question: "Is my PDF secure during conversion?",
-      answer: "Absolutely! All conversion happens locally in your browser. Your PDF never leaves your device, ensuring complete privacy and security."
+      question: "Is PDF to JPG conversion secure and private?",
+      answer: "100% secure and private! All conversion happens locally in your browser. Your PDF never leaves your device or gets uploaded to any server, ensuring complete privacy."
+    },
+    {
+      question: "How to convert PDF to JPG on mobile phone?",
+      answer: "Our PDF to JPG converter works perfectly on mobile devices. Upload your PDF from your phone, convert it, and download the JPG images. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "Can I convert PDF to PNG instead of JPG?",
+      answer: "Yes! We also offer a PDF to PNG converter for lossless image quality. PNG is better when you need transparency support or the highest quality without compression artifacts."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="PDF to JPG Converter Free Online - I Love PDF to JPG | Pine Tools Hub"
-        description="Convert PDF to JPG images online for free with our I Love PDF to JPG converter. Transform PDF pages into high-quality JPG images instantly. No registration, 100% secure."
-        keywords="pdf to jpg, convert pdf to jpg, i love pdf to jpg, pdf to image, pdf to jpeg, pdf converter, pdf to jpg online free"
+        title="PDF to JPG Converter Free Online - Extract Images from PDF | Pine Tools Hub"
+        description="Convert PDF to JPG images online for free. Extract high-quality images from PDF pages instantly. Best PDF to image converter - no watermark, works on mobile."
+        keywords="pdf to jpg, convert pdf to jpg, pdf to image, pdf to jpeg, pdf to jpg converter, extract images from pdf, pdf to jpg online free, pdf to picture, pdf to photo"
         canonical="https://pinetoolshub.com/pdf-to-jpg"
       />
 
       <div className="py-12">
         <ToolHero
-          title="PDF to JPG Converter"
-          description="Transform your PDF pages into high-quality JPG images. I Love PDF to JPG makes conversion quick and easy - completely free and secure."
+          title="PDF to JPG Converter - Free Online"
+          description="Convert PDF pages to high-quality JPG images instantly. Extract images from PDF for free - no watermark, works on desktop and mobile devices."
           icon={<Image className="h-8 w-8 text-primary" />}
         />
 

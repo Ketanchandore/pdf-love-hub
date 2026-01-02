@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -64,44 +65,52 @@ const UnlockPdf = () => {
 
   const faqs = [
     {
-      question: "How do I unlock a password-protected PDF?",
-      answer: "Upload your protected PDF to our I Love PDF Unlock tool, enter the password if you know it, and click 'Unlock PDF'. Your unlocked document will be ready for download."
+      question: "How do I unlock a password-protected PDF for free?",
+      answer: "Upload your protected PDF to our free PDF unlock tool, enter the password if you know it, and click 'Unlock PDF'. Your unlocked document will be ready for download instantly - completely free."
     },
     {
       question: "Can I unlock a PDF without knowing the password?",
-      answer: "Our tool can remove restrictions from some PDFs that don't require a password to open. For fully encrypted PDFs, you'll need to know the original password."
+      answer: "Our PDF unlocker can remove restrictions from some PDFs that do not require a password to open. For fully encrypted PDFs with user passwords, you will need to know the original password."
     },
     {
-      question: "Is it legal to unlock PDFs?",
-      answer: "Yes, if you have authorization to access the content. Our tool is designed for legitimate uses like unlocking your own documents when you've forgotten the password."
+      question: "Is it legal to unlock PDF files?",
+      answer: "Yes, if you have authorization to access the content. Our tool is designed for legitimate uses like unlocking your own documents when you have forgotten the password or have permission to access."
     },
     {
       question: "What types of PDF protection can be removed?",
-      answer: "Our tool can remove password protection that prevents editing, copying, or printing. It works best with owner-password protected PDFs rather than user-password encrypted ones."
+      answer: "Our PDF unlock tool can remove password protection that prevents editing, copying, or printing. It works best with owner-password protected PDFs rather than user-password encrypted ones."
     },
     {
-      question: "Will unlocking affect the PDF content?",
-      answer: "No, unlocking only removes the password protection. All content, formatting, images, and text remain exactly the same."
+      question: "Will unlocking affect my PDF content or quality?",
+      answer: "No, unlocking only removes the password protection. All content, formatting, images, text, and document quality remain exactly the same. No data is modified or lost."
     },
     {
-      question: "Is my PDF secure during the unlocking process?",
-      answer: "Absolutely! All processing happens locally in your browser. Your files and passwords never leave your device, ensuring complete privacy."
+      question: "Is PDF unlocking secure and private?",
+      answer: "100% secure and private! All PDF unlocking processing happens locally in your browser. Your files and passwords never leave your device or get uploaded to any server."
+    },
+    {
+      question: "How to unlock PDF on mobile phone?",
+      answer: "Our PDF unlock tool works on all mobile devices. Simply upload your password-protected PDF from your phone, enter the password if needed, and download the unlocked PDF. Works on iPhone and Android."
+    },
+    {
+      question: "Can I remove PDF editing restrictions?",
+      answer: "Yes! Our tool can remove editing restrictions that prevent you from modifying, copying text, or printing the PDF. This is useful when you have permission but the PDF has restrictive settings."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Unlock PDF Online Free - I Love PDF Unlock Tool | Pine Tools Hub"
-        description="Unlock password-protected PDF files online for free with our I Love PDF Unlock tool. Remove PDF restrictions and passwords instantly. No registration, 100% secure."
-        keywords="unlock pdf, remove pdf password, i love pdf unlock, pdf password remover, unlock pdf online, unprotect pdf, remove pdf protection free"
+        title="Unlock PDF Online Free - Remove PDF Password & Restrictions | Pine Tools Hub"
+        description="Unlock password-protected PDF files online for free. Remove PDF password and editing restrictions instantly. Best PDF unlocker - no registration, works on mobile."
+        keywords="unlock pdf, remove pdf password, pdf password remover, unlock pdf online free, unprotect pdf, remove pdf protection, pdf unlock tool, remove pdf restrictions, unlock pdf without password"
         canonical="https://pinetoolshub.com/unlock-pdf"
       />
 
       <div className="py-12">
         <ToolHero
-          title="Unlock PDF Files"
-          description="Remove password protection from your PDF documents. I Love PDF Unlock makes it quick and easy - completely free and secure."
+          title="Unlock PDF - Remove Password Free"
+          description="Remove password protection and restrictions from PDF files online. Free PDF unlocker tool - no registration required, works on desktop and mobile."
           icon={<Unlock className="h-8 w-8 text-primary" />}
         />
 

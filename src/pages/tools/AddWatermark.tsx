@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PDFDocument, rgb, StandardFonts, degrees } from "pdf-lib";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -72,44 +73,52 @@ const AddWatermark = () => {
 
   const faqs = [
     {
-      question: "How do I add a watermark to a PDF online?",
-      answer: "Upload your PDF to our I Love PDF Watermark tool, enter your watermark text, and click 'Add Watermark'. Your watermarked document will be ready to download instantly."
+      question: "How do I add a watermark to PDF online for free?",
+      answer: "Upload your PDF to our free PDF watermark tool, enter your watermark text (like CONFIDENTIAL, DRAFT, or your company name), and click 'Add Watermark'. Download your watermarked PDF instantly."
     },
     {
-      question: "Can I customize the watermark appearance?",
-      answer: "Yes! You can enter any text you want as your watermark. The watermark is automatically positioned diagonally across each page with semi-transparent styling."
+      question: "Can I customize the watermark text and appearance?",
+      answer: "Yes! Enter any text you want as your watermark. The watermark is automatically positioned diagonally across each page with professional semi-transparent styling for optimal visibility."
     },
     {
-      question: "Will the watermark appear on all pages?",
-      answer: "Yes, the watermark is applied to every page of your PDF document, ensuring consistent branding or protection throughout the entire document."
+      question: "Will the watermark appear on all PDF pages?",
+      answer: "Yes, the watermark is applied to every page of your PDF document, ensuring consistent branding or protection throughout the entire document. No page is left unwatermarked."
     },
     {
-      question: "Can I add an image watermark?",
-      answer: "Currently, our tool supports text watermarks. Text watermarks are highly effective for copyright protection, confidentiality notices, and branding purposes."
+      question: "Can I add an image or logo watermark to PDF?",
+      answer: "Currently, our tool supports text watermarks which are highly effective for copyright protection, confidentiality notices, draft marking, and branding purposes. Text watermarks load faster and display consistently."
     },
     {
-      question: "Can I remove a watermark later?",
-      answer: "Watermarks added by our tool become part of the PDF. To remove them, you would need to use the original unwatermarked file. Always keep a backup of your original documents."
+      question: "Can I remove a watermark from PDF later?",
+      answer: "Watermarks added by our tool become part of the PDF content. To remove them, you would need the original unwatermarked file. Always keep a backup of your original documents before watermarking."
     },
     {
-      question: "Is my PDF secure during watermarking?",
-      answer: "Absolutely! All processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security."
+      question: "Is adding watermark to PDF secure and private?",
+      answer: "100% secure and private! All watermark processing happens locally in your browser. Your PDF files never leave your device or get uploaded to any server."
+    },
+    {
+      question: "How to add watermark to PDF on mobile phone?",
+      answer: "Our PDF watermark tool works perfectly on mobile devices. Upload your PDF from your phone, enter watermark text, and download the watermarked PDF. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "What are common uses for PDF watermarks?",
+      answer: "PDF watermarks are commonly used for marking documents as CONFIDENTIAL, DRAFT, or SAMPLE. They are also used for copyright protection, company branding, and preventing unauthorized distribution."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="Add Watermark to PDF Free Online - I Love PDF Watermark | Pine Tools Hub"
-        description="Add watermarks to PDF files online for free with our I Love PDF Watermark tool. Protect your documents with custom text watermarks. No registration, 100% secure."
-        keywords="add watermark pdf, pdf watermark, i love pdf watermark, watermark pdf online, stamp pdf, protect pdf watermark, pdf watermark tool free"
+        title="Add Watermark to PDF Free Online - Stamp PDF Documents | Pine Tools Hub"
+        description="Add watermark to PDF files online for free. Stamp PDF documents with custom text like CONFIDENTIAL, DRAFT, or your company name. No registration, works on mobile."
+        keywords="add watermark pdf, pdf watermark, watermark pdf online, stamp pdf, pdf watermark tool, add text to pdf, pdf stamp tool, watermark pdf free, mark pdf confidential, brand pdf"
         canonical="https://pinetoolshub.com/add-watermark"
       />
 
       <div className="py-12">
         <ToolHero
-          title="Add Watermark to PDF"
-          description="Protect your PDF documents with custom text watermarks. I Love PDF Watermark makes it quick and easy - completely free and secure."
+          title="Add Watermark to PDF - Free Online"
+          description="Stamp PDF documents with custom text watermarks like CONFIDENTIAL or your brand name. Free PDF watermark tool - works on desktop and mobile devices."
           icon={<Stamp className="h-8 w-8 text-primary" />}
         />
 

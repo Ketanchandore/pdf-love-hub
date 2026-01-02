@@ -267,71 +267,69 @@ const Index = () => {
       />
       <WebsiteStructuredData />
 
-      {/* Hero Section - Hidden on mobile, visible on desktop */}
-      <section className="hidden md:block py-8 md:py-12 bg-gradient-to-b from-primary/5 via-primary/3 to-background relative overflow-hidden">
+      {/* Hero Section - Visible on ALL devices with pine tree icon */}
+      <section className="py-6 md:py-12 bg-gradient-to-b from-primary/5 via-primary/3 to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
         <div className="container mx-auto px-4 text-center relative">
+          {/* Pine Tree Icon - Always visible */}
           <div className="flex justify-center mb-4">
-            <div className="p-3 bg-primary/10 rounded-full">
-              <TreePine className="h-12 w-12 text-primary" />
+            <div className="p-3 md:p-4 bg-primary/10 rounded-full">
+              <TreePine className="h-10 w-10 md:h-14 lg:h-16 text-primary" />
             </div>
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+          
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 tracking-tight">
             Free Online PDF & Image Tools
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            The best <strong>I Love PDF alternative</strong> with complete privacy. 
+          <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 md:mb-6 px-2">
+            The best <strong className="text-primary">I Love PDF alternative</strong> with complete privacy. 
             Merge, split, compress, convert PDFs and images - all processing happens directly in your browser.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-6">
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-card border border-border rounded-full shadow-sm text-sm">
-              <Shield className="h-4 w-4 text-primary" />
+          
+          {/* Trust Badges - Visible on all devices */}
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-4 md:mb-6">
+            <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-card border border-border rounded-full shadow-sm text-xs md:text-sm">
+              <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary" />
               <span className="font-medium">100% Private</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-card border border-border rounded-full shadow-sm text-sm">
-              <Zap className="h-4 w-4 text-primary" />
+            <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-card border border-border rounded-full shadow-sm text-xs md:text-sm">
+              <Zap className="h-3 w-3 md:h-4 md:w-4 text-primary" />
               <span className="font-medium">Instant Processing</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-card border border-border rounded-full shadow-sm text-sm">
-              <Globe className="h-4 w-4 text-primary" />
+            <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-card border border-border rounded-full shadow-sm text-xs md:text-sm">
+              <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
               <span className="font-medium">Works Offline</span>
             </div>
           </div>
           
           {/* Popular Tools Quick Access */}
           <div className="flex flex-wrap justify-center gap-2">
-            <Button asChild>
+            <Button asChild size="sm" className="md:size-default">
               <Link to="/merge-pdf">Merge PDF</Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" size="sm" className="md:size-default">
               <Link to="/compress-pdf">Compress PDF</Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" size="sm" className="md:size-default">
               <Link to="/pdf-to-word">PDF to Word</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Trust Indicators - Hidden on mobile */}
-      <section className="hidden md:block py-4 border-y border-border bg-muted/30">
+      {/* Trust Indicators / Stats */}
+      <section className="py-3 md:py-4 border-y border-border bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-2 md:gap-4 max-w-2xl mx-auto">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">{stat.value}</div>
-                <div className="text-xs text-muted-foreground">{stat.label}</div>
+                <div className="text-lg md:text-2xl font-bold text-primary">{stat.value}</div>
+                <div className="text-[10px] md:text-xs text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Mobile Header - Only visible on mobile */}
-      <div className="md:hidden py-4 px-4 bg-gradient-to-b from-primary/5 to-background">
-        <h1 className="text-xl font-bold text-center">Free PDF & Image Tools</h1>
-        <p className="text-sm text-muted-foreground text-center mt-1">I Love PDF Alternative - 100% Private</p>
-      </div>
 
       {/* PDF Tools Section */}
       <section className="py-4 md:py-10" id="pdf-tools">

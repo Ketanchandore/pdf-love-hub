@@ -2,6 +2,7 @@ import { useState } from "react";
 import { jsPDF } from "jspdf";
 import { saveAs } from "file-saver";
 import SEOHead from "@/components/seo/SEOHead";
+import { ToolStructuredData, FAQStructuredData } from "@/components/seo/StructuredData";
 import ToolHero from "@/components/shared/ToolHero";
 import FileUpload from "@/components/shared/FileUpload";
 import ProcessingStatus from "@/components/shared/ProcessingStatus";
@@ -87,44 +88,59 @@ const JpgToPdf = () => {
 
   const faqs = [
     {
-      question: "How do I convert JPG images to PDF online?",
-      answer: "Upload your JPG images to our I Love JPG to PDF converter, arrange them in your preferred order, and click 'Convert to PDF'. All images will be combined into a single PDF document."
+      question: "How do I convert JPG to PDF online free without watermark?",
+      answer: "Upload your JPG images to our free JPG to PDF converter, arrange them in order, and click 'Convert to PDF'. Download your PDF instantly - completely free with no watermark, no registration required."
     },
     {
-      question: "Can I convert multiple JPG files to one PDF?",
-      answer: "Yes! You can upload as many JPG images as you need. Each image becomes a page in the final PDF, arranged in the order you specify."
+      question: "Can I combine multiple JPG images into one PDF?",
+      answer: "Yes! Our image to PDF converter lets you upload as many JPG and PNG images as needed. Each image becomes a page in your final PDF document, arranged in your preferred order."
     },
     {
-      question: "What image formats are supported?",
-      answer: "Our converter supports JPG, JPEG, and PNG image formats. All images are automatically centered and scaled to fit the PDF page while maintaining their aspect ratio."
+      question: "What image formats are supported for PDF conversion?",
+      answer: "Our best JPG to PDF converter supports JPG, JPEG, and PNG formats. All images are automatically centered and scaled to fit the PDF page while maintaining their original aspect ratio and quality."
     },
     {
-      question: "Will my image quality be preserved?",
-      answer: "Yes! Your images are embedded in the PDF at their original resolution. The PDF maintains high quality suitable for printing and digital viewing."
+      question: "Will my image quality be preserved when converting to PDF?",
+      answer: "Absolutely! Your images are embedded in the PDF at their original resolution. The PDF maintains high quality suitable for professional printing and digital viewing. No compression or quality loss."
     },
     {
-      question: "Is there a limit on how many images I can convert?",
-      answer: "There's no strict limit since processing happens in your browser. For best results, we recommend converting batches of up to 50 images at a time."
+      question: "Is there a limit on how many images I can convert to PDF?",
+      answer: "There is no strict limit since processing happens entirely in your browser. For best performance, we recommend converting batches of up to 50 images at a time on most devices."
     },
     {
-      question: "Is my data secure during conversion?",
-      answer: "Absolutely! All processing happens locally in your browser. Your images never leave your device, ensuring complete privacy and security."
+      question: "Is JPG to PDF conversion secure and private?",
+      answer: "100% secure and private! All processing happens locally in your browser. Your images never leave your device or get uploaded to any server, ensuring complete privacy and data security."
+    },
+    {
+      question: "How to convert JPG to PDF on mobile phone?",
+      answer: "Our JPG to PDF converter works perfectly on mobile devices. Simply upload your photos from your phone gallery, arrange them, and convert to PDF. Works on iPhone, Android, and all mobile browsers."
+    },
+    {
+      question: "Can I convert PNG images to PDF as well?",
+      answer: "Yes! Our converter supports both JPG and PNG image formats. You can even mix both formats in the same PDF document for maximum flexibility."
     }
   ];
 
   return (
     <>
       <SEOHead
-        title="JPG to PDF Converter Free Online - I Love JPG to PDF | Pine Tools Hub"
-        description="Convert JPG images to PDF online for free with our I Love JPG to PDF converter. Combine multiple images into one PDF document instantly. No registration, 100% secure."
-        keywords="jpg to pdf, convert jpg to pdf, i love jpg to pdf, image to pdf, jpeg to pdf, combine images to pdf, jpg to pdf online free"
+        title="JPG to PDF Converter Free Online - Best Image to PDF Tool 2026 | Pine Tools Hub"
+        description="Convert JPG to PDF online free without watermark. Best JPG to PDF converter - combine multiple images into one PDF instantly. No registration, 100% secure, works on mobile."
+        keywords="jpg to pdf, convert jpg to pdf, image to pdf, jpeg to pdf, combine images to pdf, jpg to pdf online free, jpg to pdf converter, photo to pdf, pictures to pdf, jpg to pdf no watermark, jpg to pdf mobile"
         canonical="https://pinetoolshub.com/jpg-to-pdf"
       />
+      <ToolStructuredData
+        toolName="JPG to PDF Converter"
+        toolDescription="Convert JPG images to PDF online free without watermark. Combine multiple photos into one PDF document instantly."
+        toolUrl="https://pinetoolshub.com/jpg-to-pdf"
+        category="PDF"
+      />
+      <FAQStructuredData faqs={faqs} />
 
       <div className="py-12">
         <ToolHero
-          title="JPG to PDF Converter"
-          description="Transform your JPG images into a professional PDF document. I Love JPG to PDF makes it easy to combine multiple images - completely free and secure."
+          title="JPG to PDF Converter - Free Online"
+          description="Convert JPG images to PDF online free without watermark. Combine multiple photos into one professional PDF document instantly - works on desktop and mobile."
           icon={<FileImage className="h-8 w-8 text-primary" />}
         />
 
@@ -181,31 +197,40 @@ const JpgToPdf = () => {
           )}
 
           <section className="mt-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2>Free JPG to PDF Converter - I Love Image to PDF Tool</h2>
+            <h2>Best Free JPG to PDF Converter Online - No Watermark</h2>
             <p>
-              Want to combine multiple images into a single PDF document? Pine Tools Hub's I Love JPG to PDF converter makes it incredibly easy. Whether you're creating a photo album, compiling scanned documents, or preparing images for sharing, our tool delivers professional results in seconds.
+              Looking for the best way to convert JPG to PDF online free? Pine Tools Hub offers the fastest, most secure image to PDF converter available. Whether you need to combine multiple photos into a single PDF, create a photo album, compile scanned documents, or prepare images for professional sharing, our tool delivers perfect results in seconds.
             </p>
             <p>
-              Our converter processes everything in your browser, ensuring your photos and images remain completely private. There's no uploading to external servers or waiting for server-side processing.
+              Unlike other JPG to PDF converters, our tool processes everything directly in your browser. Your images never leave your device - no uploads to external servers, no privacy concerns, no waiting in queues. This makes it the most secure and fastest JPG to PDF converter available online.
             </p>
-            <h3>Why Convert Images to PDF?</h3>
+            
+            <h3>Why Use Our JPG to PDF Converter?</h3>
             <ul>
-              <li><strong>Document Sharing:</strong> Combine multiple scanned pages into one document</li>
-              <li><strong>Photo Albums:</strong> Create shareable PDF photo collections</li>
-              <li><strong>Presentations:</strong> Package images for professional presentations</li>
-              <li><strong>Archiving:</strong> Store images in a universally compatible format</li>
-              <li><strong>Printing:</strong> Prepare images for professional printing services</li>
+              <li><strong>100% Free, No Watermark:</strong> Convert JPG to PDF without any watermarks or limitations</li>
+              <li><strong>Works on Mobile:</strong> Convert photos to PDF directly from your iPhone or Android phone</li>
+              <li><strong>Combine Multiple Images:</strong> Merge multiple JPG files into one PDF document</li>
+              <li><strong>High Quality Output:</strong> Preserve original image resolution and quality</li>
+              <li><strong>No Registration Required:</strong> Start converting immediately without signing up</li>
+              <li><strong>Complete Privacy:</strong> Your images never leave your device</li>
             </ul>
-            <h3>How to Convert JPG to PDF</h3>
+            
+            <h3>How to Convert JPG to PDF Online Free</h3>
             <ol>
-              <li>Upload your JPG or PNG images</li>
-              <li>Arrange images in your preferred order</li>
-              <li>Click "Convert to PDF" to create your document</li>
-              <li>Download your new PDF file</li>
+              <li><strong>Upload Images:</strong> Drag and drop your JPG or PNG images, or click to browse</li>
+              <li><strong>Arrange Order:</strong> Organize images in your preferred sequence</li>
+              <li><strong>Convert Instantly:</strong> Click "Convert to PDF" to create your document</li>
+              <li><strong>Download PDF:</strong> Save your new PDF file with one click</li>
             </ol>
-            <h3>Smart Image Handling</h3>
+            
+            <h3>Popular Uses for JPG to PDF Conversion</h3>
             <p>
-              Our converter automatically centers each image on the PDF page and scales it to fit while maintaining the original aspect ratio. This ensures your images look great regardless of their original dimensions.
+              Our image to PDF converter is perfect for creating digital photo albums from vacation pictures, compiling receipts and invoices for expense reports, combining scanned document pages into single files, preparing portfolios for job applications, and creating eBooks from image-based content.
+            </p>
+            
+            <h3>JPG to PDF Converter Features</h3>
+            <p>
+              Our smart converter automatically centers each image on the PDF page and scales it to fit perfectly while maintaining the original aspect ratio. This ensures your photos and images look professional regardless of their original dimensions. Whether you are converting a single photo or combining dozens of images, the output PDF maintains excellent quality suitable for printing or digital viewing.
             </p>
           </section>
 

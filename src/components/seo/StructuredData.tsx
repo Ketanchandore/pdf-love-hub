@@ -4,7 +4,7 @@ interface ToolStructuredDataProps {
   toolName: string;
   toolDescription: string;
   toolUrl: string;
-  category: "PDF" | "Image";
+  category: "PDF" | "Image" | "Text" | "Calculator" | "QR";
 }
 
 export const ToolStructuredData = ({
@@ -19,7 +19,7 @@ export const ToolStructuredData = ({
     "name": `${toolName} - I Love PDF Alternative`,
     "description": toolDescription,
     "url": toolUrl,
-    "applicationCategory": category === "PDF" ? "BusinessApplication" : "MultimediaApplication",
+    "applicationCategory": category === "PDF" ? "BusinessApplication" : category === "Image" ? "MultimediaApplication" : "UtilitiesApplication",
     "operatingSystem": "Web Browser",
     "offers": {
       "@type": "Offer",
@@ -63,7 +63,7 @@ export const ToolStructuredData = ({
         "@type": "HowToStep",
         "position": 1,
         "name": "Upload your file",
-        "text": `Click the upload button or drag and drop your ${category === "PDF" ? "PDF" : "image"} file into the designated area`,
+        "text": `Click the upload button or enter your ${category === "PDF" ? "PDF file" : category === "Image" ? "image file" : "text or data"} into the designated area`,
         "url": toolUrl
       },
       {
@@ -76,7 +76,7 @@ export const ToolStructuredData = ({
         "@type": "HowToStep",
         "position": 3,
         "name": "Process your file",
-        "text": `The tool will automatically process your ${category === "PDF" ? "PDF" : "image"} directly in your browser - no upload to servers`
+        "text": `The tool will automatically process your ${category === "PDF" ? "PDF" : category === "Image" ? "image" : "data"} directly in your browser - no upload to servers`
       },
       {
         "@type": "HowToStep",
@@ -100,7 +100,7 @@ export const ToolStructuredData = ({
     },
     "about": {
       "@type": "Thing",
-      "name": category === "PDF" ? "PDF Document Processing" : "Image Processing"
+      "name": category === "PDF" ? "PDF Document Processing" : category === "Image" ? "Image Processing" : category === "Text" ? "Text Processing" : category === "Calculator" ? "Online Calculator" : "QR Code Generation"
     },
     "mainEntity": {
       "@type": "SoftwareApplication",

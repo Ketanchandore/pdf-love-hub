@@ -250,6 +250,20 @@ const imageTools = [
   },
 ];
 
+const textTools = [
+  { title: "Word Counter", description: "Count words, characters, sentences instantly", icon: <FileText className="h-6 w-6" />, href: "/word-counter", color: "bg-blue-500" },
+  { title: "Lorem Ipsum", description: "Generate placeholder dummy text", icon: <FileText className="h-6 w-6" />, href: "/lorem-ipsum", color: "bg-emerald-500" },
+  { title: "Case Converter", description: "UPPERCASE, lowercase, Title Case & more", icon: <FileText className="h-6 w-6" />, href: "/case-converter", color: "bg-violet-500" },
+  { title: "Text Compare", description: "Find differences between two texts", icon: <FileText className="h-6 w-6" />, href: "/text-compare", color: "bg-amber-500" },
+];
+
+const calculatorTools = [
+  { title: "Age Calculator", description: "Calculate exact age from birth date", icon: <Clock className="h-6 w-6" />, href: "/age-calculator", color: "bg-pink-500" },
+  { title: "Percentage Calculator", description: "Calculate percentages instantly", icon: <FileText className="h-6 w-6" />, href: "/percentage-calculator", color: "bg-green-500" },
+  { title: "BMI Calculator", description: "Calculate Body Mass Index", icon: <FileText className="h-6 w-6" />, href: "/bmi-calculator", color: "bg-cyan-500" },
+  { title: "QR Code Generator", description: "Create QR codes for URL, WiFi, vCard", icon: <FileText className="h-6 w-6" />, href: "/qr-code-generator", color: "bg-indigo-500" },
+];
+
 const stats = [
   { label: "Files Processed", value: "10M+", icon: FileText },
   { label: "Happy Users", value: "500K+", icon: Users },

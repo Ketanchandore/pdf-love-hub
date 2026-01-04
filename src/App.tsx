@@ -41,6 +41,20 @@ import RedactPdf from "./pages/tools/RedactPdf";
 import CompressImage from "./pages/tools/CompressImage";
 import RemoveBackground from "./pages/tools/RemoveBackground";
 
+// Text Tools
+import WordCounter from "./pages/tools/WordCounter";
+import LoremIpsum from "./pages/tools/LoremIpsum";
+import CaseConverter from "./pages/tools/CaseConverter";
+import TextCompare from "./pages/tools/TextCompare";
+
+// Calculator Tools
+import AgeCalculator from "./pages/tools/AgeCalculator";
+import PercentageCalculator from "./pages/tools/PercentageCalculator";
+import BMICalculator from "./pages/tools/BMICalculator";
+
+// QR Code
+import QRCodeGenerator from "./pages/tools/QRCodeGenerator";
+
 // Info Pages
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -101,6 +115,20 @@ const App = () => (
               {/* Image Tools */}
               <Route path="compress-image" element={<CompressImage />} />
               <Route path="remove-background" element={<RemoveBackground />} />
+              
+              {/* Text Tools */}
+              <Route path="word-counter" element={<WordCounter />} />
+              <Route path="lorem-ipsum" element={<LoremIpsum />} />
+              <Route path="case-converter" element={<CaseConverter />} />
+              <Route path="text-compare" element={<TextCompare />} />
+              
+              {/* Calculator Tools */}
+              <Route path="age-calculator" element={<AgeCalculator />} />
+              <Route path="percentage-calculator" element={<PercentageCalculator />} />
+              <Route path="bmi-calculator" element={<BMICalculator />} />
+              
+              {/* QR Code */}
+              <Route path="qr-code-generator" element={<QRCodeGenerator />} />
               
               {/* Blog */}
               <Route path="blog" element={<Blog />} />

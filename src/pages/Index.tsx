@@ -364,17 +364,51 @@ const Index = () => {
       </section>
 
       {/* Image Tools Section */}
-      <section className="py-10 bg-muted/50" id="image-tools">
+      <section className="py-4 md:py-10 bg-muted/50" id="image-tools">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Image Tools</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-4 md:mb-8">
+            <h2 className="text-xl md:text-3xl font-bold mb-2">Image Tools</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
               Powerful image tools to compress and edit your images. 
               <strong> I Love Image</strong> tools for quick, browser-based processing.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto">
             {imageTools.map((tool) => (
+              <ToolCard key={tool.href} {...tool} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Text Tools Section */}
+      <section className="py-4 md:py-10" id="text-tools">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4 md:mb-8">
+            <h2 className="text-xl md:text-3xl font-bold mb-2">Text Tools</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
+              Free online text utilities - count words, generate lorem ipsum, convert case, and compare texts instantly.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 max-w-4xl mx-auto">
+            {textTools.map((tool) => (
+              <ToolCard key={tool.href} {...tool} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator & Generator Tools Section */}
+      <section className="py-4 md:py-10 bg-muted/50" id="calculator-tools">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4 md:mb-8">
+            <h2 className="text-xl md:text-3xl font-bold mb-2">Calculators & Generators</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
+              Essential calculators and generators - age calculator, BMI calculator, percentage calculator, and QR code generator.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 max-w-4xl mx-auto">
+            {calculatorTools.map((tool) => (
               <ToolCard key={tool.href} {...tool} />
             ))}
           </div>

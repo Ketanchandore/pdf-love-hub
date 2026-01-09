@@ -284,9 +284,10 @@ const MindmapGenerator = () => {
         keywords="mindmap generator, AI mindmap, PDF to mindmap, visual learning, concept map, knowledge map, study tool, diagram generator"
       />
       <ToolStructuredData
-        name="AI Mindmap Generator"
-        description="Transform documents into visual mindmaps using AI"
-        category="Education"
+        toolName="AI Mindmap Generator"
+        toolDescription="Transform documents into visual mindmaps using AI"
+        toolUrl="https://pinetoolshub.com/mindmap-generator"
+        category="Text"
       />
       <FAQStructuredData faqs={faqs} />
 
@@ -302,7 +303,7 @@ const MindmapGenerator = () => {
             <Card className="border-2 border-dashed">
               <CardContent className="p-6 space-y-6">
                 <FileUpload
-                  acceptedFormats={{
+                  accept={{
                     "application/pdf": [".pdf"],
                     "text/plain": [".txt"],
                   }}

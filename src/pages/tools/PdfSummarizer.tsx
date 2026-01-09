@@ -158,8 +158,9 @@ const PdfSummarizer = () => {
         keywords="PDF summarizer, AI summary, document summary, TL;DR, research paper summary, report summarizer, text summarization"
       />
       <ToolStructuredData
-        name="AI PDF Summarizer"
-        description="Instantly summarize any PDF document using AI"
+        toolName="AI PDF Summarizer"
+        toolDescription="Instantly summarize any PDF document using AI"
+        toolUrl="https://pinetoolshub.com/pdf-summarizer"
         category="PDF"
       />
       <FAQStructuredData faqs={faqs} />
@@ -175,7 +176,7 @@ const PdfSummarizer = () => {
           <Card className="border-2 border-dashed">
             <CardContent className="p-6 space-y-6">
               <FileUpload
-                acceptedFormats={{
+                accept={{
                   "application/pdf": [".pdf"],
                   "text/plain": [".txt"],
                 }}

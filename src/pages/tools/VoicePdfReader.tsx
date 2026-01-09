@@ -209,8 +209,9 @@ const VoicePdfReader = () => {
         keywords="PDF reader, text to speech, voice reader, audio PDF, listen to PDF, TTS, document reader, accessibility tool"
       />
       <ToolStructuredData
-        name="Voice PDF Reader"
-        description="Listen to your PDF documents with natural text-to-speech"
+        toolName="Voice PDF Reader"
+        toolDescription="Listen to your PDF documents with natural text-to-speech"
+        toolUrl="https://pinetoolshub.com/voice-pdf-reader"
         category="PDF"
       />
       <FAQStructuredData faqs={faqs} />
@@ -226,7 +227,7 @@ const VoicePdfReader = () => {
           <Card className="border-2 border-dashed">
             <CardContent className="p-6 space-y-6">
               <FileUpload
-                acceptedFormats={{
+                accept={{
                   "application/pdf": [".pdf"],
                 }}
                 maxSize={20 * 1024 * 1024}

@@ -197,9 +197,10 @@ const ExamQuestionGenerator = () => {
         keywords="exam question generator, practice test maker, MCQ generator, quiz generator, exam preparation, study questions, AI question generator"
       />
       <ToolStructuredData
-        name="AI Exam Question Generator"
-        description="Generate practice exam questions from any document using AI"
-        category="Education"
+        toolName="AI Exam Question Generator"
+        toolDescription="Generate practice exam questions from any document using AI"
+        toolUrl="https://pinetoolshub.com/exam-question-generator"
+        category="Text"
       />
       <FAQStructuredData faqs={faqs} />
 
@@ -215,7 +216,7 @@ const ExamQuestionGenerator = () => {
             <Card className="border-2 border-dashed">
               <CardContent className="p-6 space-y-6">
                 <FileUpload
-                  acceptedFormats={{
+                  accept={{
                     "application/pdf": [".pdf"],
                     "text/plain": [".txt"],
                   }}

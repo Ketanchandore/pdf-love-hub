@@ -170,9 +170,10 @@ ${text.slice(0, 15000)}
         keywords="study planner, AI study schedule, exam preparation, revision timetable, study plan generator, spaced repetition, exam study guide"
       />
       <ToolStructuredData
-        name="AI Study Planner"
-        description="Create personalized study schedules from your course material"
-        category="Education"
+        toolName="AI Study Planner"
+        toolDescription="Create personalized study schedules from your course material"
+        toolUrl="https://pinetoolshub.com/study-planner"
+        category="Text"
       />
       <FAQStructuredData faqs={faqs} />
 
@@ -188,7 +189,7 @@ ${text.slice(0, 15000)}
             <Card className="border-2 border-dashed">
               <CardContent className="p-6 space-y-6">
                 <FileUpload
-                  acceptedFormats={{
+                  accept={{
                     "application/pdf": [".pdf"],
                     "text/plain": [".txt"],
                   }}

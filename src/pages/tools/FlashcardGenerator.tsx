@@ -176,9 +176,10 @@ const FlashcardGenerator = () => {
         keywords="flashcard generator, AI flashcards, PDF to flashcards, study cards, Anki flashcards, spaced repetition, exam preparation"
       />
       <ToolStructuredData
-        name="AI Flashcard Generator"
-        description="Transform PDFs and text into smart flashcards using AI"
-        category="Education"
+        toolName="AI Flashcard Generator"
+        toolDescription="Transform PDFs and text into smart flashcards using AI"
+        toolUrl="https://pinetoolshub.com/flashcard-generator"
+        category="Text"
       />
       <FAQStructuredData faqs={faqs} />
 
@@ -194,7 +195,7 @@ const FlashcardGenerator = () => {
             <Card className="border-2 border-dashed">
               <CardContent className="p-6 space-y-6">
                 <FileUpload
-                  acceptedFormats={{
+                  accept={{
                     "application/pdf": [".pdf"],
                     "text/plain": [".txt"],
                   }}

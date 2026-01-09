@@ -55,6 +55,19 @@ import BMICalculator from "./pages/tools/BMICalculator";
 // QR Code
 import QRCodeGenerator from "./pages/tools/QRCodeGenerator";
 
+// AI Intelligence Tools
+import SemanticPdfAssistant from "./pages/tools/SemanticPdfAssistant";
+import DecisionIntelligence from "./pages/tools/DecisionIntelligence";
+import DocumentChat from "./pages/tools/DocumentChat";
+
+// Education Tools
+import FlashcardGenerator from "./pages/tools/FlashcardGenerator";
+import ExamQuestionGenerator from "./pages/tools/ExamQuestionGenerator";
+import MindmapGenerator from "./pages/tools/MindmapGenerator";
+import PdfSummarizer from "./pages/tools/PdfSummarizer";
+import StudyPlanner from "./pages/tools/StudyPlanner";
+import VoicePdfReader from "./pages/tools/VoicePdfReader";
+
 // Info Pages
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -129,6 +142,19 @@ const App = () => (
               
               {/* QR Code */}
               <Route path="qr-code-generator" element={<QRCodeGenerator />} />
+              
+              {/* AI Intelligence Tools */}
+              <Route path="semantic-pdf-assistant" element={<SemanticPdfAssistant />} />
+              <Route path="decision-intelligence" element={<DecisionIntelligence />} />
+              <Route path="document-chat" element={<DocumentChat />} />
+              
+              {/* Education Tools */}
+              <Route path="flashcard-generator" element={<FlashcardGenerator />} />
+              <Route path="exam-question-generator" element={<ExamQuestionGenerator />} />
+              <Route path="mindmap-generator" element={<MindmapGenerator />} />
+              <Route path="pdf-summarizer" element={<PdfSummarizer />} />
+              <Route path="study-planner" element={<StudyPlanner />} />
+              <Route path="voice-pdf-reader" element={<VoicePdfReader />} />
               
               {/* Blog */}
               <Route path="blog" element={<Blog />} />

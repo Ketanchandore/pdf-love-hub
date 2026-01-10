@@ -68,6 +68,15 @@ import PdfSummarizer from "./pages/tools/PdfSummarizer";
 import StudyPlanner from "./pages/tools/StudyPlanner";
 import VoicePdfReader from "./pages/tools/VoicePdfReader";
 
+// New AI Tools
+import ResumeOptimizer from "./pages/tools/ResumeOptimizer";
+import PdfToPodcast from "./pages/tools/PdfToPodcast";
+import BankStatementExtractor from "./pages/tools/BankStatementExtractor";
+import ContractRiskScanner from "./pages/tools/ContractRiskScanner";
+import LinkedInCarouselGenerator from "./pages/tools/LinkedInCarouselGenerator";
+import SmartRedactor from "./pages/tools/SmartRedactor";
+import KnowledgeVault from "./pages/tools/KnowledgeVault";
+
 // Info Pages
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -155,6 +164,15 @@ const App = () => (
               <Route path="pdf-summarizer" element={<PdfSummarizer />} />
               <Route path="study-planner" element={<StudyPlanner />} />
               <Route path="voice-pdf-reader" element={<VoicePdfReader />} />
+              
+              {/* New AI Tools */}
+              <Route path="resume-optimizer" element={<ResumeOptimizer />} />
+              <Route path="pdf-to-podcast" element={<PdfToPodcast />} />
+              <Route path="bank-statement-extractor" element={<BankStatementExtractor />} />
+              <Route path="contract-risk-scanner" element={<ContractRiskScanner />} />
+              <Route path="linkedin-carousel-generator" element={<LinkedInCarouselGenerator />} />
+              <Route path="smart-redactor" element={<SmartRedactor />} />
+              <Route path="knowledge-vault" element={<KnowledgeVault />} />
               
               {/* Blog */}
               <Route path="blog" element={<Blog />} />

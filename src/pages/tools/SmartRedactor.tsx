@@ -114,10 +114,11 @@ const SmartRedactor = () => {
       });
 
       if (error) throw error;
-      setDetectedPII(data.matches);
+      const matches = Array.isArray(data?.matches) ? data.matches : [];
+      setDetectedPII(matches);
       toast({ 
         title: "Scan complete!", 
-        description: `Found ${data.matches.length} sensitive items.` 
+        description: `Found ${matches.length} sensitive items.` 
       });
     } catch (error) {
       console.error("Scan error:", error);

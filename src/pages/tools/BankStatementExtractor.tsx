@@ -314,9 +314,9 @@ const BankStatementExtractor = () => {
                   <CardContent className="pt-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium">{result.bankName}</p>
+                        <p className="text-sm font-medium">{result.bankName || "Unknown Bank"}</p>
                         <p className="text-xs text-muted-foreground">
-                          Account: ****{result.accountNumber.slice(-4)}
+                          Account: ****{result.accountNumber ? result.accountNumber.slice(-4) : "XXXX"}
                         </p>
                       </div>
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">

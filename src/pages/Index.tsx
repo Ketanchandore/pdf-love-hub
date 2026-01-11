@@ -38,6 +38,13 @@ import {
   Wrench,
   GitCompare,
   FileCheck,
+  Brain,
+  FileUser,
+  Headphones,
+  Landmark,
+  Scale,
+  Linkedin,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -264,6 +271,16 @@ const calculatorTools = [
   { title: "QR Code Generator", description: "Create QR codes for URL, WiFi, vCard", icon: <FileText className="h-6 w-6" />, href: "/qr-code-generator", color: "bg-indigo-500" },
 ];
 
+const aiTools = [
+  { title: "ATS Resume Optimizer", description: "Beat the bots - optimize resume for ATS", icon: <FileUser className="h-6 w-6" />, href: "/resume-optimizer", color: "bg-gradient-to-r from-violet-500 to-purple-500" },
+  { title: "PDF to Podcast", description: "Convert documents to audio conversations", icon: <Headphones className="h-6 w-6" />, href: "/pdf-to-podcast", color: "bg-gradient-to-r from-pink-500 to-rose-500" },
+  { title: "Bank Statement Extractor", description: "Extract transactions to Excel", icon: <Landmark className="h-6 w-6" />, href: "/bank-statement-extractor", color: "bg-gradient-to-r from-emerald-500 to-teal-500" },
+  { title: "Contract Risk Scanner", description: "AI legal contract analyzer", icon: <Scale className="h-6 w-6" />, href: "/contract-risk-scanner", color: "bg-gradient-to-r from-amber-500 to-orange-500" },
+  { title: "LinkedIn Carousel", description: "PDF to social media slides", icon: <Linkedin className="h-6 w-6" />, href: "/linkedin-carousel-generator", color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
+  { title: "Smart PII Redactor", description: "Auto-detect & redact sensitive info", icon: <ShieldCheck className="h-6 w-6" />, href: "/smart-redactor", color: "bg-gradient-to-r from-red-500 to-rose-500" },
+  { title: "Knowledge Vault", description: "Chat with multiple documents", icon: <Brain className="h-6 w-6" />, href: "/knowledge-vault", color: "bg-gradient-to-r from-indigo-500 to-violet-500" },
+];
+
 const stats = [
   { label: "Files Processed", value: "10M+", icon: FileText },
   { label: "Happy Users", value: "500K+", icon: Users },
@@ -410,6 +427,37 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 max-w-4xl mx-auto">
             {calculatorTools.map((tool) => (
               <ToolCard key={tool.href} {...tool} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Intelligence Tools Section */}
+      <section className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background" id="ai-tools">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-3">
+              <Brain className="h-4 w-4" />
+              AI-Powered
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">AI Intelligence Tools</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+              Next-generation document intelligence. Extract data, analyze contracts, generate content with AI.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
+            {aiTools.map((tool) => (
+              <Link
+                key={tool.href}
+                to={tool.href}
+                className="group p-4 md:p-5 bg-card border border-border rounded-xl hover:shadow-lg transition-all hover:-translate-y-1 hover:border-primary/50"
+              >
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${tool.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
+                  {tool.icon}
+                </div>
+                <h3 className="font-semibold text-sm md:text-base mb-1">{tool.title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
+              </Link>
             ))}
           </div>
         </div>

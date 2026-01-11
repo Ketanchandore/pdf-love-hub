@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, FileText, ChevronDown } from "lucide-react";
+import { Menu, X, FileText, ChevronDown, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -32,6 +32,16 @@ const pdfTools = [
 const imageTools = [
   { name: "Compress Image", href: "/compress-image", description: "Reduce image file size" },
   { name: "Remove Background", href: "/remove-background", description: "AI-powered background removal" },
+];
+
+const aiTools = [
+  { name: "Resume Optimizer", href: "/resume-optimizer", description: "Beat ATS bots with AI" },
+  { name: "PDF to Podcast", href: "/pdf-to-podcast", description: "Convert docs to audio" },
+  { name: "Bank Statement Extractor", href: "/bank-statement-extractor", description: "Extract to Excel" },
+  { name: "Contract Risk Scanner", href: "/contract-risk-scanner", description: "Analyze legal contracts" },
+  { name: "LinkedIn Carousel", href: "/linkedin-carousel-generator", description: "PDF to social slides" },
+  { name: "Smart Redactor", href: "/smart-redactor", description: "Auto-redact PII" },
+  { name: "Knowledge Vault", href: "/knowledge-vault", description: "Chat with documents" },
 ];
 
 const Header = () => {
@@ -83,6 +93,34 @@ const Header = () => {
               <NavigationMenuContent>
                 <ul className="grid w-[300px] gap-2 p-4">
                   {imageTools.map((tool) => (
+                    <li key={tool.href}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to={tool.href}
+                          className={cn(
+                            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          )}
+                        >
+                          <div className="text-sm font-medium leading-none">{tool.name}</div>
+                          <p className="line-clamp-1 text-sm leading-snug text-muted-foreground mt-1">
+                            {tool.description}
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-transparent">
+                <Brain className="h-4 w-4 mr-1" />
+                AI Tools
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-2 p-4 md:grid-cols-2">
+                  {aiTools.map((tool) => (
                     <li key={tool.href}>
                       <NavigationMenuLink asChild>
                         <Link
@@ -161,6 +199,24 @@ const Header = () => {
               </h3>
               <div className="grid grid-cols-2 gap-2">
                 {imageTools.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    to={tool.href}
+                    className="text-sm text-muted-foreground hover:text-foreground p-2 rounded-md hover:bg-accent"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {tool.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2 flex items-center gap-1">
+                <Brain className="h-4 w-4" />
+                AI Tools <ChevronDown className="h-4 w-4" />
+              </h3>
+              <div className="grid grid-cols-2 gap-2">
+                {aiTools.map((tool) => (
                   <Link
                     key={tool.href}
                     to={tool.href}

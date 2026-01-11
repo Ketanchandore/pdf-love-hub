@@ -76,6 +76,11 @@ import ContractRiskScanner from "./pages/tools/ContractRiskScanner";
 import LinkedInCarouselGenerator from "./pages/tools/LinkedInCarouselGenerator";
 import SmartRedactor from "./pages/tools/SmartRedactor";
 import KnowledgeVault from "./pages/tools/KnowledgeVault";
+import PdfAccessibilityChecker from "./pages/tools/PdfAccessibilityChecker";
+import DocumentHealthScore from "./pages/tools/DocumentHealthScore";
+import WebToKnowledge from "./pages/tools/WebToKnowledge";
+import PdfFormBuilder from "./pages/tools/PdfFormBuilder";
+import BatchWorkflowBuilder from "./pages/tools/BatchWorkflowBuilder";
 
 // Info Pages
 import About from "./pages/About";
@@ -173,6 +178,11 @@ const App = () => (
               <Route path="linkedin-carousel-generator" element={<LinkedInCarouselGenerator />} />
               <Route path="smart-redactor" element={<SmartRedactor />} />
               <Route path="knowledge-vault" element={<KnowledgeVault />} />
+              <Route path="pdf-accessibility-checker" element={<PdfAccessibilityChecker />} />
+              <Route path="document-health-score" element={<DocumentHealthScore />} />
+              <Route path="web-to-knowledge" element={<WebToKnowledge />} />
+              <Route path="pdf-form-builder" element={<PdfFormBuilder />} />
+              <Route path="batch-workflow-builder" element={<BatchWorkflowBuilder />} />
               
               {/* Blog */}
               <Route path="blog" element={<Blog />} />

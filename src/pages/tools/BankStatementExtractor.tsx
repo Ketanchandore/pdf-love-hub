@@ -109,10 +109,21 @@ const BankStatementExtractor = () => {
       });
 
       if (error) throw error;
-      setResult(data);
+      // Ensure data has valid structure with defaults
+      const safeResult: ExtractionResult = {
+        bankName: data?.bankName || "Unknown Bank",
+        accountNumber: data?.accountNumber || "",
+        period: data?.period || "N/A",
+        openingBalance: data?.openingBalance || 0,
+        closingBalance: data?.closingBalance || 0,
+        totalCredits: data?.totalCredits || 0,
+        totalDebits: data?.totalDebits || 0,
+        transactions: Array.isArray(data?.transactions) ? data.transactions : []
+      };
+      setResult(safeResult);
       toast({ 
         title: "Extraction complete!", 
-        description: `Found ${data.transactions.length} transactions.` 
+        description: `Found ${safeResult.transactions.length} transactions.` 
       });
     } catch (error) {
       console.error("Extraction error:", error);

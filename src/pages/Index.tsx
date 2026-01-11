@@ -279,6 +279,11 @@ const aiTools = [
   { title: "LinkedIn Carousel", description: "PDF to social media slides", icon: <Linkedin className="h-6 w-6" />, href: "/linkedin-carousel-generator", color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
   { title: "Smart PII Redactor", description: "Auto-detect & redact sensitive info", icon: <ShieldCheck className="h-6 w-6" />, href: "/smart-redactor", color: "bg-gradient-to-r from-red-500 to-rose-500" },
   { title: "Knowledge Vault", description: "Chat with multiple documents", icon: <Brain className="h-6 w-6" />, href: "/knowledge-vault", color: "bg-gradient-to-r from-indigo-500 to-violet-500" },
+  { title: "Accessibility Checker", description: "WCAG compliance scanner for PDFs", icon: <FileCheck className="h-6 w-6" />, href: "/pdf-accessibility-checker", color: "bg-gradient-to-r from-cyan-500 to-blue-500" },
+  { title: "Document Health Score", description: "Quality score for your documents", icon: <FileCheck className="h-6 w-6" />, href: "/document-health-score", color: "bg-gradient-to-r from-green-500 to-emerald-500" },
+  { title: "Web to Knowledge", description: "URL to notes, flashcards, mindmaps", icon: <Globe className="h-6 w-6" />, href: "/web-to-knowledge", color: "bg-gradient-to-r from-purple-500 to-pink-500" },
+  { title: "PDF Form Builder", description: "Convert static PDF to web form", icon: <FileText className="h-6 w-6" />, href: "/pdf-form-builder", color: "bg-gradient-to-r from-orange-500 to-red-500" },
+  { title: "Batch Workflow Builder", description: "Automate PDF processing pipelines", icon: <Layers className="h-6 w-6" />, href: "/batch-workflow-builder", color: "bg-gradient-to-r from-slate-500 to-gray-600" },
 ];
 
 const stats = [

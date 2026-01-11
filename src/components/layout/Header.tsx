@@ -42,6 +42,11 @@ const aiTools = [
   { name: "LinkedIn Carousel", href: "/linkedin-carousel-generator", description: "PDF to social slides" },
   { name: "Smart Redactor", href: "/smart-redactor", description: "Auto-redact PII" },
   { name: "Knowledge Vault", href: "/knowledge-vault", description: "Chat with documents" },
+  { name: "Accessibility Checker", href: "/pdf-accessibility-checker", description: "WCAG compliance" },
+  { name: "Document Health Score", href: "/document-health-score", description: "Quality scoring" },
+  { name: "Web to Knowledge", href: "/web-to-knowledge", description: "URL to notes" },
+  { name: "PDF Form Builder", href: "/pdf-form-builder", description: "PDF to web form" },
+  { name: "Batch Workflow", href: "/batch-workflow-builder", description: "Automation pipelines" },
 ];
 
 const Header = () => {

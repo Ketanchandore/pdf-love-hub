@@ -40,7 +40,11 @@ import RedactPdf from "./pages/tools/RedactPdf";
 // Image Tools
 import CompressImage from "./pages/tools/CompressImage";
 import RemoveBackground from "./pages/tools/RemoveBackground";
-
+import PhotoEnhancer from "./pages/tools/PhotoEnhancer";
+import QRCodePro from "./pages/tools/QRCodePro";
+import ThumbnailGenerator from "./pages/tools/ThumbnailGenerator";
+import SubtitleGenerator from "./pages/tools/SubtitleGenerator";
+import ColorPaletteGenerator from "./pages/tools/ColorPaletteGenerator";
 // Text Tools
 import WordCounter from "./pages/tools/WordCounter";
 import LoremIpsum from "./pages/tools/LoremIpsum";
@@ -142,7 +146,11 @@ const App = () => (
               {/* Image Tools */}
               <Route path="compress-image" element={<CompressImage />} />
               <Route path="remove-background" element={<RemoveBackground />} />
-              
+              <Route path="photo-enhancer" element={<PhotoEnhancer />} />
+              <Route path="qr-code-pro" element={<QRCodePro />} />
+              <Route path="thumbnail-generator" element={<ThumbnailGenerator />} />
+              <Route path="subtitle-generator" element={<SubtitleGenerator />} />
+              <Route path="color-palette-generator" element={<ColorPaletteGenerator />} />
               {/* Text Tools */}
               <Route path="word-counter" element={<WordCounter />} />
               <Route path="lorem-ipsum" element={<LoremIpsum />} />

@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/seo/SEOHead";
 import { WebsiteStructuredData } from "@/components/seo/StructuredData";
 import ToolCard from "@/components/shared/ToolCard";
+import CategorySlider from "@/components/shared/CategorySlider";
 import {
   Merge,
   Scissors,
@@ -45,6 +47,12 @@ import {
   Scale,
   Linkedin,
   ShieldCheck,
+  Sparkles,
+  Palette,
+  QrCode,
+  ImagePlus,
+  Video,
+  Wand2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -271,19 +279,36 @@ const calculatorTools = [
   { title: "QR Code Generator", description: "Create QR codes for URL, WiFi, vCard", icon: <FileText className="h-6 w-6" />, href: "/qr-code-generator", color: "bg-indigo-500" },
 ];
 
+// AI Tool Categories
+const aiCategories = [
+  { id: "all", label: "All Tools" },
+  { id: "document", label: "Document AI" },
+  { id: "visual", label: "Visual Tools" },
+  { id: "career", label: "Career Tools" },
+  { id: "content", label: "Content Creation" },
+  { id: "analysis", label: "Analysis" },
+];
+
 const aiTools = [
-  { title: "ATS Resume Optimizer", description: "Beat the bots - optimize resume for ATS", icon: <FileUser className="h-6 w-6" />, href: "/resume-optimizer", color: "bg-gradient-to-r from-violet-500 to-purple-500" },
-  { title: "PDF to Podcast", description: "Convert documents to audio conversations", icon: <Headphones className="h-6 w-6" />, href: "/pdf-to-podcast", color: "bg-gradient-to-r from-pink-500 to-rose-500" },
-  { title: "Bank Statement Extractor", description: "Extract transactions to Excel", icon: <Landmark className="h-6 w-6" />, href: "/bank-statement-extractor", color: "bg-gradient-to-r from-emerald-500 to-teal-500" },
-  { title: "Contract Risk Scanner", description: "AI legal contract analyzer", icon: <Scale className="h-6 w-6" />, href: "/contract-risk-scanner", color: "bg-gradient-to-r from-amber-500 to-orange-500" },
-  { title: "LinkedIn Carousel", description: "PDF to social media slides", icon: <Linkedin className="h-6 w-6" />, href: "/linkedin-carousel-generator", color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
-  { title: "Smart PII Redactor", description: "Auto-detect & redact sensitive info", icon: <ShieldCheck className="h-6 w-6" />, href: "/smart-redactor", color: "bg-gradient-to-r from-red-500 to-rose-500" },
-  { title: "Knowledge Vault", description: "Chat with multiple documents", icon: <Brain className="h-6 w-6" />, href: "/knowledge-vault", color: "bg-gradient-to-r from-indigo-500 to-violet-500" },
-  { title: "Accessibility Checker", description: "WCAG compliance scanner for PDFs", icon: <FileCheck className="h-6 w-6" />, href: "/pdf-accessibility-checker", color: "bg-gradient-to-r from-cyan-500 to-blue-500" },
-  { title: "Document Health Score", description: "Quality score for your documents", icon: <FileCheck className="h-6 w-6" />, href: "/document-health-score", color: "bg-gradient-to-r from-green-500 to-emerald-500" },
-  { title: "Web to Knowledge", description: "URL to notes, flashcards, mindmaps", icon: <Globe className="h-6 w-6" />, href: "/web-to-knowledge", color: "bg-gradient-to-r from-purple-500 to-pink-500" },
-  { title: "PDF Form Builder", description: "Convert static PDF to web form", icon: <FileText className="h-6 w-6" />, href: "/pdf-form-builder", color: "bg-gradient-to-r from-orange-500 to-red-500" },
-  { title: "Batch Workflow Builder", description: "Automate PDF processing pipelines", icon: <Layers className="h-6 w-6" />, href: "/batch-workflow-builder", color: "bg-gradient-to-r from-slate-500 to-gray-600" },
+  // Document AI
+  { title: "ATS Resume Optimizer", description: "Beat the bots - optimize resume for ATS", icon: <FileUser className="h-6 w-6" />, href: "/resume-optimizer", color: "bg-gradient-to-r from-violet-500 to-purple-500", category: "career" },
+  { title: "PDF to Podcast", description: "Convert documents to audio conversations", icon: <Headphones className="h-6 w-6" />, href: "/pdf-to-podcast", color: "bg-gradient-to-r from-pink-500 to-rose-500", category: "content" },
+  { title: "Bank Statement Extractor", description: "Extract transactions to Excel", icon: <Landmark className="h-6 w-6" />, href: "/bank-statement-extractor", color: "bg-gradient-to-r from-emerald-500 to-teal-500", category: "document" },
+  { title: "Contract Risk Scanner", description: "AI legal contract analyzer", icon: <Scale className="h-6 w-6" />, href: "/contract-risk-scanner", color: "bg-gradient-to-r from-amber-500 to-orange-500", category: "analysis" },
+  { title: "LinkedIn Carousel", description: "PDF to social media slides", icon: <Linkedin className="h-6 w-6" />, href: "/linkedin-carousel-generator", color: "bg-gradient-to-r from-blue-500 to-cyan-500", category: "content" },
+  { title: "Smart PII Redactor", description: "Auto-detect & redact sensitive info", icon: <ShieldCheck className="h-6 w-6" />, href: "/smart-redactor", color: "bg-gradient-to-r from-red-500 to-rose-500", category: "document" },
+  { title: "Knowledge Vault", description: "Chat with multiple documents", icon: <Brain className="h-6 w-6" />, href: "/knowledge-vault", color: "bg-gradient-to-r from-indigo-500 to-violet-500", category: "document" },
+  { title: "Accessibility Checker", description: "WCAG compliance scanner for PDFs", icon: <FileCheck className="h-6 w-6" />, href: "/pdf-accessibility-checker", color: "bg-gradient-to-r from-cyan-500 to-blue-500", category: "analysis" },
+  { title: "Document Health Score", description: "Quality score for your documents", icon: <FileCheck className="h-6 w-6" />, href: "/document-health-score", color: "bg-gradient-to-r from-green-500 to-emerald-500", category: "analysis" },
+  { title: "Web to Knowledge", description: "URL to notes, flashcards, mindmaps", icon: <Globe className="h-6 w-6" />, href: "/web-to-knowledge", color: "bg-gradient-to-r from-purple-500 to-pink-500", category: "document" },
+  { title: "PDF Form Builder", description: "Convert static PDF to web form", icon: <FileText className="h-6 w-6" />, href: "/pdf-form-builder", color: "bg-gradient-to-r from-orange-500 to-red-500", category: "document" },
+  { title: "Batch Workflow Builder", description: "Automate PDF processing pipelines", icon: <Layers className="h-6 w-6" />, href: "/batch-workflow-builder", color: "bg-gradient-to-r from-slate-500 to-gray-600", category: "document" },
+  // Visual Tools
+  { title: "Photo Enhancer", description: "AI upscale & enhance images", icon: <ImagePlus className="h-6 w-6" />, href: "/photo-enhancer", color: "bg-gradient-to-r from-fuchsia-500 to-pink-500", category: "visual" },
+  { title: "QR Code Pro", description: "Custom branded QR codes", icon: <QrCode className="h-6 w-6" />, href: "/qr-code-pro", color: "bg-gradient-to-r from-teal-500 to-cyan-500", category: "visual" },
+  { title: "Thumbnail Generator", description: "AI CTR-optimized thumbnails", icon: <Wand2 className="h-6 w-6" />, href: "/thumbnail-generator", color: "bg-gradient-to-r from-rose-500 to-orange-500", category: "visual" },
+  { title: "Subtitle Generator", description: "Auto-generate video subtitles", icon: <Video className="h-6 w-6" />, href: "/subtitle-generator", color: "bg-gradient-to-r from-blue-600 to-indigo-600", category: "content" },
+  { title: "Color Palette Generator", description: "AI-powered color schemes", icon: <Palette className="h-6 w-6" />, href: "/color-palette-generator", color: "bg-gradient-to-r from-violet-500 to-fuchsia-500", category: "visual" },
 ];
 
 const stats = [
@@ -293,6 +318,12 @@ const stats = [
 ];
 
 const Index = () => {
+  const [selectedAICategory, setSelectedAICategory] = useState("all");
+
+  const filteredAITools = selectedAICategory === "all" 
+    ? aiTools 
+    : aiTools.filter(tool => tool.category === selectedAICategory);
+
   return (
     <>
       <SEOHead
@@ -440,9 +471,9 @@ const Index = () => {
       {/* AI Intelligence Tools Section */}
       <section className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background" id="ai-tools">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-6 md:mb-10">
+          <div className="text-center mb-4 md:mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-3">
-              <Brain className="h-4 w-4" />
+              <Sparkles className="h-4 w-4" />
               AI-Powered
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-2">AI Intelligence Tools</h2>
@@ -450,12 +481,23 @@ const Index = () => {
               Next-generation document intelligence. Extract data, analyze contracts, generate content with AI.
             </p>
           </div>
+
+          {/* Category Slider */}
+          <div className="flex justify-center mb-6 md:mb-8">
+            <CategorySlider
+              categories={aiCategories}
+              selectedCategory={selectedAICategory}
+              onCategoryChange={setSelectedAICategory}
+            />
+          </div>
+
+          {/* Tools Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
-            {aiTools.map((tool) => (
+            {filteredAITools.map((tool) => (
               <Link
                 key={tool.href}
                 to={tool.href}
-                className="group p-4 md:p-5 bg-card border border-border rounded-xl hover:shadow-lg transition-all hover:-translate-y-1 hover:border-primary/50"
+                className="group p-4 md:p-5 bg-card border border-border rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
               >
                 <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${tool.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
                   {tool.icon}
@@ -465,6 +507,13 @@ const Index = () => {
               </Link>
             ))}
           </div>
+
+          {/* Show message when no tools in category */}
+          {filteredAITools.length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">No tools found in this category.</p>
+            </div>
+          )}
         </div>
       </section>
 

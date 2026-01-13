@@ -398,6 +398,55 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AI Intelligence Tools Section - TOP PRIORITY */}
+      <section className="py-6 md:py-10 bg-gradient-to-b from-primary/5 to-background" id="ai-tools">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4 md:mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-3">
+              <Sparkles className="h-4 w-4" />
+              AI-Powered
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">AI Intelligence Tools</h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+              Next-generation document intelligence. Extract data, analyze contracts, generate content with AI.
+            </p>
+          </div>
+
+          {/* Category Slider */}
+          <div className="flex justify-center mb-6 md:mb-8">
+            <CategorySlider
+              categories={aiCategories}
+              selectedCategory={selectedAICategory}
+              onCategoryChange={setSelectedAICategory}
+            />
+          </div>
+
+          {/* Tools Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
+            {filteredAITools.map((tool) => (
+              <Link
+                key={tool.href}
+                to={tool.href}
+                className="group p-4 md:p-5 bg-card border border-border rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+              >
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${tool.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
+                  {tool.icon}
+                </div>
+                <h3 className="font-semibold text-sm md:text-base mb-1">{tool.title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
+              </Link>
+            ))}
+          </div>
+
+          {/* Show message when no tools in category */}
+          {filteredAITools.length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground">No tools found in this category.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* PDF Tools Section */}
       <section className="py-4 md:py-10" id="pdf-tools">
         <div className="container mx-auto px-4">
@@ -465,55 +514,6 @@ const Index = () => {
               <ToolCard key={tool.href} {...tool} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* AI Intelligence Tools Section */}
-      <section className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background" id="ai-tools">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-4 md:mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-3">
-              <Sparkles className="h-4 w-4" />
-              AI-Powered
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">AI Intelligence Tools</h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              Next-generation document intelligence. Extract data, analyze contracts, generate content with AI.
-            </p>
-          </div>
-
-          {/* Category Slider */}
-          <div className="flex justify-center mb-6 md:mb-8">
-            <CategorySlider
-              categories={aiCategories}
-              selectedCategory={selectedAICategory}
-              onCategoryChange={setSelectedAICategory}
-            />
-          </div>
-
-          {/* Tools Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
-            {filteredAITools.map((tool) => (
-              <Link
-                key={tool.href}
-                to={tool.href}
-                className="group p-4 md:p-5 bg-card border border-border rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
-              >
-                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl ${tool.color} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
-                  {tool.icon}
-                </div>
-                <h3 className="font-semibold text-sm md:text-base mb-1">{tool.title}</h3>
-                <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{tool.description}</p>
-              </Link>
-            ))}
-          </div>
-
-          {/* Show message when no tools in category */}
-          {filteredAITools.length === 0 && (
-            <div className="text-center py-8">
-              <p className="text-muted-foreground">No tools found in this category.</p>
-            </div>
-          )}
         </div>
       </section>
 
